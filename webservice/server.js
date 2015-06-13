@@ -2,7 +2,7 @@
 /* DONOT forget (cmd, at project folder): $npm install express -- save */
 var express = require('express');
 var app = express();
-app.use('/', express.static('./public')).listen(3000);
+app.use('/', express.static('./public'));
 var usersAction = require('./usersActionsController');
 
 app.get('/get', function(req,res){

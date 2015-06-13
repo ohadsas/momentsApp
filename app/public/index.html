@@ -10,9 +10,10 @@
 </head>
 
 <body ng-controller="MomentsCtrl" class="visible-phone ">
-	
+	<div data-ng-click="getMoment(2)" ng-class="{'active' : displayMoment(2)}"> 
 
-<div  ng-repeat="item in todo.items  | orderBy:'userId' "  class="content container-fluid">
+click me
+	</div>
   hey
 </div>
 
