@@ -2,10 +2,10 @@
 /* DONOT forget (cmd, at project folder): $npm install express -- save */
 var express = require('express');
 var app = express();
-//app.use('/', express.static('./public')).listen(3000);
+app.use('/', express.static('./public')).listen(3000);
 var usersAction = require('./usersActionsController');
 
-app.get('/ws_todo/getActionsData', function(req,res){
+app.get('/get', function(req,res){
 	console.log("out Docs :" + usersAction.getData());
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Header", "Origin, X-Requested-With,Content-Type, Accept");
