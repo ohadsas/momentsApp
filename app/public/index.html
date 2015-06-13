@@ -12,7 +12,7 @@
 <body ng-controller="MomentsCtrl" class="visible-phone ">
 	
 
-<div class="content container-fluid">
+<div  ng-repeat="item in todo.items  | orderBy:'userId' "  class="content container-fluid">
   hey
 </div>
 

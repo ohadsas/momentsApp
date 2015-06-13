@@ -3,16 +3,16 @@
 var express = require('express');
 var app = express();
 //app.use('/', express.static('./public')).listen(3000);
-var todoAction = require('./usersActionsController');
+var usersAction = require('./usersActionsController');
 
 app.get('/ws_todo/getActionsData', function(req,res){
-	console.log("out Docs :" + todoAction.getData());
+	console.log("out Docs :" + usersAction.getData());
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Header", "Origin, X-Requested-With,Content-Type, Accept");
 	app.set('json spaces',4);
 	res.set("Content-Type", "application/json");
 	res.status(200);
-	res.json(todoAction.getData());
+	res.json(usersAction.getData());
 });
 
 app.listen(3000);
