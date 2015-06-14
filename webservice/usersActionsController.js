@@ -1,27 +1,27 @@
-var mogoose = require('mongoose');
-var db = mogoose.connect('mongodb://db_user:db_pass@ds047632.mongolab.com:47632/momentapp');
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://db_user:db_pass@ds047632.mongolab.com:47632/momentapp');
 
 
 var usersSchema  = require('./users_schema').usersSchema;
-mogoose.model('usersM', usersSchema);
+mongoose.model('usersM', usersSchema);
 var usersAction;
 
 
-
-mogoose.connection.once('open',function(){
+mongoose.connection.once('open',function(){
 	var Users = this.model('usersM');
-var query = Users.find();
-query.where('userId');
+	var query = Users.find();
+	query.where('userId');
 
 query.exec(function(err, docs){
 	usersAction = docs;
 	console.log("docs: " + usersAction);
-	mogoose.disconnect();
+	mongoose.disconnect();
 	return usersAction;
 	
 	});
 });
 
 exports.getData = function(){
+	debugger;
 	return usersAction;
 };

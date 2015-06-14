@@ -4,16 +4,17 @@
 	<title>TO DO app</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
-<body ng-controller="MomentsCtrl" class="visible-phone">
-	<script> debugger</script>
-	<div ng-controller="MomentsCtrl">
-			<p>The ID is {{user.userId}}</p>
-</div>
+<body ng-controller="DataCtrl">
+	<div ng-controller="DataCtrl">
+<!-- 			<p>The ID is {{user[0].myMoments[0]}}</p>
+ -->						<p>the Users {{allUsers()}}</p>
+<!-- 		<p> my MOMENTS {{displayMsg()}}</p>	
+ --></div>
 
 	<script src="js/lib/angular/angular.min.js"></script>
 	<script src="js/moment.js"></script>	
