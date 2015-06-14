@@ -11,7 +11,7 @@ var usersAction;
 mogoose.connection.once('open',function(){
 	var Users = this.model('usersM');
 var query = Users.find();
-query.where('userId').ne('99');
+query.where('userId');
 
 query.exec(function(err, docs){
 	usersAction = docs;

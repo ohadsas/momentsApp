@@ -6,11 +6,10 @@ momentApp.controller('MomentsCtrl', function($scope,$http) {
 	$http.get("http://localhost:3000/get").success(function (data) {
 		console.log(data);
 		$scope.user = data;
-		console.log("user id : "+$scope.user.userId);
-        $scope.usersMom = data.users;
+		debugger;
+		console.log("user id gdfgdfgdfg : "+ user);
 	});
 
-	
 });
 
 
