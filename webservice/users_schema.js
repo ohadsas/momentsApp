@@ -10,7 +10,7 @@ myMoments: [{
 	momMessage: {type:String, required:true},
 	address: {type:String, required:true},
 	coor: {type:Number, required:true},
-	date: { type : Date, default: Date.now},
+	date: String,
 	time: { type : Date},
 	explores: Number,
 	saveTheMom: Boolean,

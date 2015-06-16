@@ -22,6 +22,5 @@ query.exec(function(err, docs){
 });
 
 exports.getData = function(){
-	debugger;
 	return usersAction;
 };
