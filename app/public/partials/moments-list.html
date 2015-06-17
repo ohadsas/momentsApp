@@ -1,0 +1,13 @@
+ <div ng-repeat="moment in moments">
+			<ul ng-repeat="myMmt in moment.myMoments">
+				            <li class="momList" ng-class-odd="'oddColor'">
+				            	<p class="momDate pmom">{{myMmt.date}}</p>
+				            	<p class="momAddress pmom">{{myMmt.address}}</p>
+				            	<p class="momDistance pmom">1.2 km</p>
+				            	<p class="momMsg"><a href="#/moments/{{myMmt.momId}}">{{myMmt.momMessage}}</a></p>
+				            	<p class="momExplores pmom">{{myMmt.explores}} Explores | </p>
+				            	<p class="momRemoments pmom">&nbsp{{myMmt.remoments.length}} Remoments</p>
+				            	<div class="clear"></div>
+				            </li>
+			</ul>
+   </div>

@@ -1,0 +1,18 @@
+<div ng-class="singleMmomentObjId()" class="momList">
+        <p class="momDate pmom">{{singleMomentObj[0].date}} | {{singleMomentObj[0].time}} </p>
+		<p class="FullMomMsg">{{singleMomentObj[0].momMessage}}</p>
+		<p class="momExplores pmom">{{singleMomentObj[0].explores}} Explores | </p>
+		<p class="momRemoments pmom">&nbsp{{singleMomentObj[0].remoments.length}} Remoments</p>
+		<p class="momDistance pmom">Remoment</p>
+		<div class="clear"></div>
+
+</div>
+
+<ul ng-repeat="reMom in singleMomentObj[0].remoments" class="row remomList">
+		<li  ng-class-odd="'oddColor'">
+        	<p class="col-xs-8"></p>
+        	<p class="remDate pmom col-xs-4">{{reMom.date}} | {{reMom.time}}</p>
+        					        	<p class="remSign col-xs-2">{{reMom.sign}}</p>
+        	<p class="remMsg col-xs-10">{{reMom.remMessage}}</p>
+		</li>
+</ul>
