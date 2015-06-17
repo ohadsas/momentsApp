@@ -1,13 +1,20 @@
- <div ng-repeat="moment in moments">
-			<ul ng-repeat="myMmt in moment.myMoments">
-				            <li class="momList" ng-class-odd="'oddColor'">
-				            	<p class="momDate pmom">{{myMmt.date}}</p>
-				            	<p class="momAddress pmom">{{myMmt.address}}</p>
-				            	<p class="momDistance pmom">1.2 km</p>
-				            	<p class="momMsg"><a href="#/moments/{{myMmt.momId}}">{{myMmt.momMessage}}</a></p>
-				            	<p class="momExplores pmom">{{myMmt.explores}} Explores | </p>
-				            	<p class="momRemoments pmom">&nbsp{{myMmt.remoments.length}} Remoments</p>
-				            	<div class="clear"></div>
-				            </li>
-			</ul>
+<div class="container-fluid contr-padding">
+   <div ng-repeat="moment in moments">
+      <ul ng-repeat="myMmt in moment.myMoments">
+         <li class="momList">
+            <div class="row-fluid">
+               <p class="col-xs-3 momDate pfont">{{myMmt.date}}</p>
+               <p class="col-xs-6 pfont">{{myMmt.address}}</p>
+               <p class="col-xs-3 momDistance pfont">1.2 km</p>
+            </div>
+            <div class="row-fluid">
+               <p class="momMsg col-xs-12"><a href="#/moments/{{myMmt.momId}}">{{myMmt.momMessage}}</a></p>
+            </div>
+            <div class="row-fluid">
+               <p class="momExplores col-xs-8 no-margin pfont">{{myMmt.explores}} Explores | &nbsp{{myMmt.remoments.length}} Remoments</p>
+            </div>
+            <div class="clear"></div>
+         </li>
+      </ul>
    </div>
+</div>

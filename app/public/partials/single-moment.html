@@ -1,18 +1,28 @@
-<div ng-class="singleMmomentObjId()" class="momList">
-        <p class="momDate pmom">{{singleMomentObj[0].date}} | {{singleMomentObj[0].time}} </p>
-		<p class="FullMomMsg">{{singleMomentObj[0].momMessage}}</p>
-		<p class="momExplores pmom">{{singleMomentObj[0].explores}} Explores | </p>
-		<p class="momRemoments pmom">&nbsp{{singleMomentObj[0].remoments.length}} Remoments</p>
-		<p class="momDistance pmom">Remoment</p>
-		<div class="clear"></div>
-
+<div class="container-fluid contr-padding">
+   <div ng-class="singleMmomentObjId()" class="momList">
+      <div class="row-fluid">
+         <p class="col-xs-4 col-xs-offset-4 pfont">{{singleMomentObj[0].date}} | {{singleMomentObj[0].time}} </p>
+         <p class="col-xs-2 col-xs-offset-2 glyphicon glyphicon-bookmark"></p>
+      </div>
+      <div class="row-fluid">
+         <p class="FullMomMsg col-xs-12">{{singleMomentObj[0].momMessage}}</p>
+      </div>
+      <div class="row-fluid">
+         <p class="momExplores pfont col-xs-8 no-margin">{{singleMomentObj[0].explores}} Explores | &nbsp{{singleMomentObj[0].remoments.length}} Remoments</p>
+         <p class="pfont momDistance col-xs-4 no-margin">Remoment</p>
+      </div>
+      <div class="clear"></div>
+   </div>
+   <ul ng-repeat="reMom in singleMomentObj[0].remoments" class="row remomList">
+      <li ng-class-odd="'oddColor'">
+         <div class="row-fluid">
+            <p class="col-xs-8"></p>
+            <p class="remDate pfont col-xs-4 ">{{reMom.date}} | {{reMom.time}}</p>
+         </div>
+         <div class="row-fluid">
+            <p class="remSign col-xs-2">{{reMom.sign}}</p>
+            <p class="remMsg col-xs-10">{{reMom.remMessage}}</p>
+         </div>
+      </li>
+   </ul>
 </div>
-
-<ul ng-repeat="reMom in singleMomentObj[0].remoments" class="row remomList">
-		<li  ng-class-odd="'oddColor'">
-        	<p class="col-xs-8"></p>
-        	<p class="remDate pmom col-xs-4">{{reMom.date}} | {{reMom.time}}</p>
-        					        	<p class="remSign col-xs-2">{{reMom.sign}}</p>
-        	<p class="remMsg col-xs-10">{{reMom.remMessage}}</p>
-		</li>
-</ul>

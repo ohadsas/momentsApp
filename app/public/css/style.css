@@ -1,5 +1,5 @@
 
-ul, li {
+ul, li{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -8,10 +8,17 @@ body{
 	/*overflow-y: hidden;*/
 	/*height: 100%;*/
 }
-a {
+
+a{
     color: inherit;
     text-decoration: none;
 }
+
+.contr-padding{
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .momList{
 	margin: 2%;
 	background-color: #ccc;
@@ -21,6 +28,7 @@ a {
   	font-size: 17px;
   	font-weight: 600;
 }
+
 .remomList{
 	background-color: #ccc;
 	padding: 1.5%;
@@ -30,23 +38,15 @@ a {
   	padding: 1.5%;
 
 }
+
 .clear{
 	clear: both;
-}
-
-
-.pmom{
-	font-size: 10px;
-	display: inline-block;
-	float: left;
-	margin: 0;
 }
 
 .momMsg{
 	padding-top: 25px;
 	padding-bottom: 25px;
 	display: block;
-	float: left;
 	overflow: hidden;
   	text-overflow: ellipsis;
   	white-space: nowrap;
@@ -55,6 +55,7 @@ a {
   	margin-left: 25%;
   	margin-right: 25%;
 }
+
 .FullMomMsg{
 	padding: 30px;
 	font-size: 20px;
@@ -62,7 +63,8 @@ a {
 }
 
 .momDate{
-	float: none;
+	text-align: left;
+	padding: 0;
 }
 
 .remDate{
@@ -75,31 +77,34 @@ a {
 	background-color: #6E6A6A;
 	text-align: center;
 }
+
 .remMsg{
 	float: left;
 	text-align: left;
-
-}
-.momAddress{
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
-	float: none;
-	width: 50%;
 }
 
 .momExplores{
-
+	padding: 0;
+	text-align: left;
 }
 
-.momRemoments{
-
+.no-margin{
+	margin: 0;
 }
 
 .momDistance{
-	float: right;
+	 padding: 0;
+	 text-align: right;
 }
-.oddColor{
-/*	background-color: #9C8282;
-*/
+.ColorInject{
+	background-color: #9C8282;
+}
+
+.pfont{
+	font-size: 10px;
+}
+
+p::first-letter {
+  text-transform: uppercase;
+
 }
