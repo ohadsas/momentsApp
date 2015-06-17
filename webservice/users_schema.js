@@ -11,14 +11,14 @@ myMoments: [{
 	address: {type:String, required:true},
 	coor: {type:Number, required:true},
 	date: String,
-	time: { type : Date},
+	time: String,
 	explores: Number,
 	saveTheMom: Boolean,
 	remoments: [{
 		sign: {type:String, required:true, unique:true},
 		remMessage: {type:String, required:true},
-		date: { type : Date, default: Date.now},
-		time: { type : Date},
+		date: String,
+		time: String,
 		flag: Boolean
 	}]
 }],
