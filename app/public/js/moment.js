@@ -5,15 +5,15 @@ momentApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/moments', {
-        templateUrl: 'partials/moments-list.html',
+        templateUrl: 'views/partials/moments-list.html',
         controller: 'MomentsListCtrl'
       }).
       when('/moments/:momId', {
-        templateUrl: 'partials/single-moment.html',
+        templateUrl: 'views/partials/single-moment.html',
         controller: 'SingleMomentCtrl'
       }).
       otherwise({
         redirectTo: '/moments'
       });
-  }]);
+	}]);
 
