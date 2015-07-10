@@ -1,7 +1,6 @@
 {
   "name": "webserver",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +12,9 @@
     "bson": "^0.3.2",
     "express": "^4.12.4",
     "mongoose": "^4.0.4"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "first"
+  ]
 }

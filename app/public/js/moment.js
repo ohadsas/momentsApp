@@ -8,6 +8,14 @@ momentApp.config(['$routeProvider',
         templateUrl: 'views/partials/moments-list.html',
         controller: 'MomentsListCtrl'
       }).
+        when('/welcome', {
+        templateUrl: 'views/partials/welcome-page.html',
+        controller: 'MomentsListCtrl'
+      }).
+         when('/login', {
+        templateUrl: 'views/partials/login.html',
+        controller: 'AuthMomentCtrl'
+      }).
       when('/moments/:momId', {
         templateUrl: 'views/partials/single-moment.html',
         controller: 'SingleMomentCtrl'

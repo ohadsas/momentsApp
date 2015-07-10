@@ -39,6 +39,46 @@ a{
 
 }
 
+
+.whatsYourMom div{
+	text-align: center;
+	color: #16a79a;
+}
+
+.whatsYourMom {
+	margin: 2%;
+	height: 75px;
+  	background-color: #faf6e2;
+
+}
+
+.whatsYourMomTxt {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 3% 0 3% 0;
+}
+
+.CurrAdd{
+
+}
+
+.downLine{
+	text-align: center;
+ 	background-color: rgb( 163, 162, 152 );
+  	height: 1px;
+   box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );
+   margin-left: auto;
+	margin-right: auto;
+   opacity: 0.302;
+   margin-bottom: 3%;
+}
+
+.upperLine{
+	margin-top: 3%;
+ 	background-color: rgb( 163, 162, 152 );
+  	height: 1px;
+}
+
 .clear{
 	clear: both;
 }
@@ -108,3 +148,121 @@ p::first-letter {
   text-transform: uppercase;
 
 }
+
+
+/*Welcome Page Start*/
+
+.map-bkg{
+	background-image: url("../images/mapbkg.png");
+	position: fixed;
+	background-repeat: repeat-y;
+	height: 680px;
+	width: 100%;
+
+ }
+
+.logoBig{
+	background-repeat: no-repeat;
+	background-image: url("../images/logoBig.png");
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 11.5%;
+	height: 73px;
+	width: 57%;
+
+}
+.welcomeTxtBox{
+	margin-top: 13%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	font-size: 18px;
+	text-align: center;
+	font-family: "openSansHebrew";
+	color: #33aeac;
+}
+
+.btn-welcome{
+	display: block;
+	margin-top: 14%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 57%;
+	color: #faf6e2;
+}
+
+.btn-welcome a{
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 2px;
+	background-color: #33aeac;
+	box-shadow: 0px 1px 3px 0px rgb( 9, 87, 79 );
+}
+
+.btn-welcome a:nth-child(1){
+	margin-bottom: 10%;
+}
+
+/*Welcome Page End*/
+
+
+
+/*login page start*/
+
+.loginInput{
+	width: 57%;
+	color: #faf6e2;
+	height: 6%;
+	background-color: #f5b671;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 1px 3px 0px rgb( 22, 167, 154 );
+	border: 0;
+	border-radius: 2px;
+}
+
+.loginDiv > form > div:nth-child(1) {
+	margin-bottom: 3%;
+}
+
+.loginDiv > form > div:nth-child(2) {
+	margin-bottom: 9%;
+}
+
+.done{
+	border: 0;
+  	border-radius: 2px;
+	display: block;
+	width: 57%;
+	color: #faf6e2;
+	height: 6%;
+	background-color: #33aeac;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 1px 3px 0px rgb( 9, 87, 79 );
+}
+
+.loginDiv input {
+    background-image: url("../images/elipse_none.png");
+    background-position:  97% 50%; 
+    background-repeat: no-repeat;
+}
+
+.loginDiv input:active {
+    background-image: url("../images/elipse_bad.png");
+}
+.loginDiv input:focus {
+    background-image: url("../images/elipse_bad.png");
+}
+
+
+.done[disabled]{
+  	background-color: #95dfc5;
+  	box-shadow: 1.5px 2.598px 1px 0px rgb( 9, 87, 79 );
+}
+
+.loginDiv{
+	margin-top: 12%;
+}
+/*login page end*/

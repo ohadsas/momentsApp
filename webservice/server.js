@@ -15,5 +15,5 @@ app.get('/get', function(req,res){
 	res.json(usersAction.getData());
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log("service is listening on port 3000 !!!!!")
