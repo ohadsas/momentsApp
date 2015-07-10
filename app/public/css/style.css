@@ -20,13 +20,15 @@ a{
 }
 
 .momList{
-	margin: 2%;
+  margin: 4% 2% 4% 2%;
 	background-color: #ccc;
 	border: none;
-  	padding: 1.5%;
   	text-align: center;
   	font-size: 17px;
-  	font-weight: 600;
+  	font-weight: bold;
+	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );	
+	border-radius: 3px;
+
 }
 
 .remomList{
@@ -39,19 +41,30 @@ a{
 
 }
 
-
-.whatsYourMom div{
-	text-align: center;
-	color: #16a79a;
-}
-
 .whatsYourMom {
 	margin: 2%;
-	height: 75px;
   	background-color: #faf6e2;
+	color: #16a79a;
+	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );	
+	text-align: center;
 
 }
 
+.pHead{
+  background-image: linear-gradient(to bottom,#faf6e2 0,#faf6e2 100%) !important;
+  	color: #16a79a !important;
+}
+
+.pFooter{
+  width: 92%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #faf6e2;
+  border-top: 2px solid #ddd;
+
+
+}
 .whatsYourMomTxt {
 	font-size: 18px;
 	font-weight: bold;
@@ -83,6 +96,26 @@ a{
 	clear: both;
 }
 
+.tailBrdr{
+	background-image: url("../images/line.png");
+ 	width: 95%;
+ 	float: none;
+	margin-left: auto;
+ 	margin-right: auto;
+	margin: 0 auto 2% auto;
+	opacity: 0.4;
+}
+
+.headBrdr{
+	background-image: url("../images/line.png");
+ 	width: 100%;
+ 	float: none;
+	margin-left: auto;
+ 	margin-right: auto;
+	margin: 0 auto 2% auto;
+	opacity: 0.4;
+}
+
 .momMsg{
 	padding-top: 25px;
 	padding-bottom: 25px;
@@ -96,6 +129,13 @@ a{
   	margin-right: 25%;
 }
 
+div.row-fluid.headMsg > p {
+	margin-bottom: 0.5%;
+}
+
+.headMsg {
+	border-radius: 3px;
+}
 .FullMomMsg{
 	padding: 30px;
 	font-size: 20px;
@@ -104,7 +144,7 @@ a{
 
 .momDate{
 	text-align: left;
-	padding: 0;
+  padding: 0 0 0 2%;
 }
 
 .remDate{
@@ -124,7 +164,7 @@ a{
 }
 
 .momExplores{
-	padding: 0;
+	 padding: 0 0 0 2%;
 	text-align: left;
 }
 
@@ -133,7 +173,7 @@ a{
 }
 
 .momDistance{
-	 padding: 0;
+	 padding: 0 2% 0 0;
 	 text-align: right;
 }
 .ColorInject{

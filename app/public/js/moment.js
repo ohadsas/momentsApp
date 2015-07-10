@@ -12,12 +12,16 @@ momentApp.config(['$routeProvider',
         templateUrl: 'views/partials/welcome-page.html',
         controller: 'MomentsListCtrl'
       }).
-         when('/login', {
+        when('/login', {
         templateUrl: 'views/partials/login.html',
         controller: 'AuthMomentCtrl'
       }).
       when('/moments/:momId', {
         templateUrl: 'views/partials/single-moment.html',
+        controller: 'SingleMomentCtrl'
+      }).
+      when('/map', {
+        templateUrl: 'views/partials/map.html',
         controller: 'SingleMomentCtrl'
       }).
       otherwise({
