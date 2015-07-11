@@ -17,13 +17,14 @@
 	<script src="js/moment.js"></script>	
 	<script src="js/controllers.js"></script>	
 	<script src="js/main.js"></script>	
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script type="text/javascript">
       $(document).ready(function() {
             removeNavBar();
             currentWindow();
+            google.maps.event.addDomListener(window, 'load', initialize);
         });   
 	</script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body><!-- TODO add class visible-phone -->
 <nav id="navbar" class="navbar navbar-fixed-top">
