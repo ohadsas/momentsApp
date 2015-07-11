@@ -10,12 +10,17 @@ body{
 }
 
 a{
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
+
+
 .view {
-margin-top: 14%;	
+	margin-top: 15%;	
+}
+#noNav {
+	margin-top: 0 !important;
 }
 .contr-padding{
 	padding-left: 0;
@@ -23,76 +28,87 @@ margin-top: 14%;
 }
 
 .momList{
-  margin: 4% 2% 4% 2%;
-	background-color: #ccc;
-	border: none;
-  	text-align: center;
-  	font-size: 17px;
-  	font-weight: bold;
-	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );	
+	margin: 4% 2% 4% 2%;
+	border: 1px solid;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
 	border-radius: 3px;
+	color: #faf6e2;
 
 }
 
 .remomList{
-	background-color: #ccc;
-	padding: 1.5%;
 	margin: 2%;
-  	font-size: 18px;
-  	font-weight: bold;
-  	padding: 1.5%;
+	font-size: 18px;
+	color:#faf6e2;
+	border-radius: 3px;
+	border: 1px solid;
+}
 
+.remBody{
+	margin-top:2%;
 }
 
 .whatsYourMom {
 	margin: 2%;
-  	background-color: #faf6e2;
-	color: #16a79a;
-	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );	
+	background-color: #faf6e2;
+	box-shadow: 0px 0px 5px 0px rgb( 199,197, 185);	
 	text-align: center;
+	border: 1px solid rgb( 207, 204,188);	
 
 }
 
 .pHead{
-  background-image: linear-gradient(to bottom,#faf6e2 0,#faf6e2 100%) !important;
-  	color: #16a79a !important;
+	background-image: linear-gradient(to bottom,#faf6e2 0,#faf6e2 100%) !important;
+	color: #16a79a !important;
+	font-weight: bold;
+	padding-top: 0;
+  padding-bottom: 2%;
+  margin-bottom: 0;
+  margin-top: 1.5%;
 }
 
 .pFooter{
-  width: 92%;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #faf6e2;
-  border-top: 2px solid #ddd;
+	width: 92%;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #faf6e2;
+	border-top: 1px solid  rgb(211,208,193);
 
 
 }
-.whatsYourMomTxt {
-	font-size: 18px;
-	font-weight: bold;
-	margin: 3% 0 3% 0;
+
+.whatsYourMom > div.panel-body > h3{
+	color: #75C2AD;
+	margin-top: 10px;
 }
 
-.CurrAdd{
 
+.panel-body{
+	padding: 4px;
 }
 
+
+.bkgColor{
+	background-color: #fcf9e7;
+}
 .downLine{
 	text-align: center;
- 	background-color: rgb( 163, 162, 152 );
-  	height: 1px;
-   box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );
-   margin-left: auto;
+	background-color: rgb( 163, 162, 152 );
+	height: 1px;
+	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );
+	margin-left: auto;
 	margin-right: auto;
-   opacity: 0.302;
-   margin-bottom: 3%;
+	opacity: 0.302;
+	margin-bottom: 3%;
 }
 
 .upperLine{
 	margin-top: 3%;
- 	background-color: rgb( 163, 162, 152 );
-  	height: 1px;
+	background-color: rgb( 163, 162, 152 );
+	height: 1px;
 }
 
 .clear{
@@ -101,22 +117,10 @@ margin-top: 14%;
 
 .tailBrdr{
 	background-image: url("../images/line.png");
- 	width: 95%;
- 	float: none;
+	width: 94%;
+	float: none;
 	margin-left: auto;
- 	margin-right: auto;
-	margin: 0 auto 2% auto;
-	opacity: 0.4;
-}
-
-.headBrdr{
-	background-image: url("../images/line.png");
- 	width: 100%;
- 	float: none;
-	margin-left: auto;
- 	margin-right: auto;
-	margin: 0 auto 2% auto;
-	opacity: 0.4;
+	margin-right: auto;
 }
 
 .momMsg{
@@ -124,12 +128,12 @@ margin-top: 14%;
 	padding-bottom: 25px;
 	display: block;
 	overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
-  	width: 100%;
-  	max-width: 160px;
-  	margin-left: 25%;
-  	margin-right: 25%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	max-width: 160px;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
 div.row-fluid.headMsg > p {
@@ -137,7 +141,9 @@ div.row-fluid.headMsg > p {
 }
 
 .headMsg {
-	border-radius: 3px;
+	border-radius-top-left: 3px;
+	border-radius-top-right: 3px;
+	padding-top: 1%;
 }
 .FullMomMsg{
 	padding: 30px;
@@ -147,18 +153,22 @@ div.row-fluid.headMsg > p {
 
 .momDate{
 	text-align: left;
-  padding: 0 0 0 2%;
+	padding: 0 0 0 3%;
 }
 
 .remDate{
-  padding: 0;
-  text-align: right;
+	padding: 0;
+	text-align: right;
 }
 
 .remSign{
-	font-size: 26px;
-	background-color: #6E6A6A;
+	font-size: 24px;
+	background-color: #faf6e2;
 	text-align: center;
+	padding: 0;
+	margin-left: 3%;
+	margin-top: 1%;
+	border-radius: 3px;
 }
 
 .remMsg{
@@ -167,8 +177,10 @@ div.row-fluid.headMsg > p {
 }
 
 .momExplores{
-	 padding: 0 0 0 2%;
+	padding: 0 0 0 3%;
 	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 0;
 }
 
 .no-margin{
@@ -176,8 +188,8 @@ div.row-fluid.headMsg > p {
 }
 
 .momDistance{
-	 padding: 0 2% 0 0;
-	 text-align: right;
+	padding: 0 3% 0 0;
+	text-align: right;
 }
 .ColorInject{
 	background-color: #9C8282;
@@ -188,7 +200,7 @@ div.row-fluid.headMsg > p {
 }
 
 p::first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 
 }
 
@@ -202,7 +214,7 @@ p::first-letter {
 	height: 680px;
 	width: 100%;
 
- }
+}
 
 .logoBig{
 	background-repeat: no-repeat;
@@ -275,7 +287,7 @@ p::first-letter {
 
 .done{
 	border: 0;
-  	border-radius: 2px;
+	border-radius: 2px;
 	display: block;
 	width: 57%;
 	color: #faf6e2;
@@ -287,25 +299,105 @@ p::first-letter {
 }
 
 .loginDiv input {
-    background-image: url("../images/elipse_none.png");
-    background-position:  97% 50%; 
-    background-repeat: no-repeat;
+	background-image: url("../images/elipse_none.png");
+	background-position:  97% 50%; 
+	background-repeat: no-repeat;
 }
 
 .loginDiv input:active {
-    background-image: url("../images/elipse_bad.png");
+	background-image: url("../images/elipse_bad.png");
 }
 .loginDiv input:focus {
-    background-image: url("../images/elipse_bad.png");
+	background-image: url("../images/elipse_bad.png");
 }
 
 
 .done[disabled]{
-  	background-color: #95dfc5;
-  	box-shadow: 1.5px 2.598px 1px 0px rgb( 9, 87, 79 );
+	background-color: #95dfc5;
+	box-shadow: 1.5px 2.598px 1px 0px rgb( 9, 87, 79 );
 }
 
 .loginDiv{
 	margin-top: 12%;
 }
 /*login page end*/
+
+
+/*navbar start*/
+
+
+
+#navbar{
+	background-color: #faf6e2;
+	box-shadow: 0px 0px 4px 0px rgb( 163, 162, 152 );	
+	min-height: 8% !important;
+}
+
+#navbar .container {
+	padding: 0;
+}
+
+#navbar li.span3{
+	display: inline-block;
+	background-repeat: no-repeat;
+	margin-bottom: 0;
+}
+
+ul.nav{
+	display: inline-block;
+
+}
+.nav-right{
+	float: right;
+	width: 35%;
+	margin-top: 4%;
+}
+
+.nav-left{
+	float: left;
+	width: 65%;
+		margin-top: 3.5%;
+
+
+}
+
+#navbar li.span3 > a {
+	display: inline-block;
+
+}
+
+.navLogo{
+	background-image: url("../images/logoNav.png");
+	margin-left: 9.23%;
+	width: 29.23%;
+
+}
+
+.mapIcon{
+	background-image: url("../images/mapIcon.png");
+	float:right;
+	width: 10.76%;
+	margin-top: 0.65% !important;
+}
+
+.momIcon{
+	background-image: url("../images/momentIcon.png");
+	float: left;
+	margin-left: 23.9%;
+	margin-top: 0.65% !important;
+	width: 20%;
+}
+
+.menuIcon{
+	background-image: url("../images/menuIcon.png");
+	float: right;
+	margin-right: 17.14%;
+	width: 20%;
+}
+
+.notCurrent{
+	opacity: 0.5;
+}
+
+
+/*navbar end*/

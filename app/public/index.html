@@ -12,20 +12,36 @@
 	<script src="js/lib/angular/angular-google-maps.min.js"></script>
 	<script src="js/lib/angular/lodash.min.js"></script>
 	<script src="js/lib/angular/bower_components/angular-route/angular-route.js"></script>
+	<script src="js/lib/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/lib/bower_components/jquery/dist/jquery.js"></script>
 	<script src="js/moment.js"></script>	
 	<script src="js/controllers.js"></script>	
+	<script src="js/main.js"></script>	
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
-
+	<script type="text/javascript">
+      $(document).ready(function() {
+            removeNavBar();
+            currentWindow();
+        });   
+	</script>
 </head>
 <body><!-- TODO add class visible-phone -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-  </div>
+<nav id="navbar" class="navbar navbar-fixed-top">
+            <ul class="nav nav-left">
+                <li class="span3 navLogo" id = "navLogo"><a href="#/moments"></a></li>
+                <li class="span3 mapIcon"><a href="#/map"></a></li>
+            </ul>
+              <ul class="nav nav-right">
+                <li class="span3 momIcon"><a href="#/moments"></a></li>
+                <li class="span3 menuIcon"><a href="#"></a></li>
+            </ul>
 </nav>
-<div ng-view class="view"> 
+<div ng-view class= "view">
 
 </div>
 
 
 </body>
+
+
 </html>
