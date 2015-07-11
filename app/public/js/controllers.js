@@ -3,7 +3,6 @@ momentControllers.controller('MomentsListCtrl', ['$scope', '$http',
 	function ($scope, $http) {
 		$http.get("http://localhost:3000/get").success(function (data) {
 			$scope.momentsObjs = data;
-			console.log(" MomentsListCtrl data : " + data);
 			$scope.moments = $scope.momentsObjs;
 		});
 		$scope.momentBodyColor = function(item){
@@ -74,7 +73,6 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 	function ($scope, $routeParams, $http) {
 		$http.get("http://localhost:3000/get").success(function (data) {
 			$scope.momentsObjs = data;
-			console.log("SingleMomentCtrl : " + data);
 			$scope.momId = $routeParams.momId;
 			$scope.moments = $scope.momentsObjs;
 		});
@@ -90,13 +88,17 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 			});
 			return $scope.singleMomentObj = singleMomentStack;
 		};
-		$scope.getRandomColor = function(){
+		$scope.getRandomColor = function(item){
+			if(item.colorSign){
+				return item.colorSign;
+			}
 			var letters = '0123456789ABCDEF'.split('');
-    		var color = '#';
-    		for (var i = 0; i < 6 , count > 0; i++ ) {
-    				color += letters[Math.floor(Math.random() * 16)];        		
-    		}
-    	return color;	
+			var colorSign = '#';
+			for (var i = 0; i < 6 ; i++ ) {
+				colorSign += letters[Math.floor(Math.random() * 16)];        		
+			}
+			item.colorSign = colorSign;
+			return colorSign;	
 		};
 
 	}]);

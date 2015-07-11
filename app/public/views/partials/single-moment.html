@@ -1,34 +1,33 @@
 <div class="container-fluid contr-padding bkgColor" ng-controller="MomentsListCtrl">
    <div ng-class="singleMmomentObjId()" class="momList" ng-style = "momentBodyColor(singleMomentObj[0])">
-<div class="row-fluid headMsg" ng-style = "momentHeadColor(singleMomentObj[0])"  >
-            <p class="col-xs-3 momDate pfont" ng-bind="singleMomentObj[0].date"></p>
-            <p class="col-xs-6 pfont" ng-bind="singleMomentObj[0].address"></p>
-            <p class="col-xs-3 momDistance pfont">km</p>
-            <div class="clear"></div>
-            <p class=" col-xs-12"></p>
-         </div>
-
-         <div class="row-fluid bodyMsg" >
-            <p class="FullMomMsg col-xs-12" ng-bind="singleMomentObj[0].momMessage"></p>
-         </div>
+      <div class="row-fluid headMsg" ng-style = "momentHeadColor(singleMomentObj[0])"  >
+         <p class="col-xs-3 momDate pfont" ng-bind="singleMomentObj[0].date"></p>
+         <p class="col-xs-6 pfont" ng-bind="singleMomentObj[0].address"></p>
+         <p class="col-xs-3 momDistance pfont">km</p>
          <div class="clear"></div>
-         <div class="row-fluid ">
-            <p class=" col-xs-12 tailBrdr"></p>
-            <p class="momExplores col-xs-8 pfont" ng-bind-template = "{{singleMomentObj[0].explores }}  Explores | &nbsp {{singleMomentObj[0].remoments.length}} Remoments">
-            </p>
-         </div>
+         <p class=" col-xs-12"></p>
+      </div>
+      <div class="row-fluid bodyMsg" >
+         <p class="FullMomMsg col-xs-12" ng-bind="singleMomentObj[0].momMessage"></p>
+      </div>
+      <div class="clear"></div>
+      <div class="row-fluid ">
+         <p class=" col-xs-12 tailBrdr"></p>
+         <p class="momExplores col-xs-8 pfont" ng-bind-template = "{{singleMomentObj[0].explores }}  Explores | &nbsp {{singleMomentObj[0].remoments.length}} Remoments">
+         </p>
+      </div>
       <div class="clear"></div>
    </div>
    <ul ng-repeat="reMom in singleMomentObj[0].remoments" class="row remomList" ng-style = "momentBodyColor(singleMomentObj[0])">
       <li>
-<div class="row-fluid headMsg " >
+         <div class="row-fluid headMsg " >
             <p class="col-xs-4 momDate pfont">{{reMom.date}} &nbsp {{reMom.time}}</p>
             <p class= "col-xs-8"></p>
             <div class="clear"></div>
             <p class=" col-xs-12 tailBrdr"></p>
          </div>
          <div class="row-fluid remBody">
-            <p class="remSign col-xs-2" ng-style="{color : getRandomColor()}">{{reMom.sign}}</p>
+            <p class="remSign col-xs-2" ng-style="{color : getRandomColor(reMom)}">{{reMom.sign}}</p>
             <p class="remMsg col-xs-9 ">{{reMom.remMessage}}</p>
          </div>
       </li>
