@@ -107,23 +107,30 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 //add form of user id and pass 
 momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http',
 	function ($scope, $routeParams, $http) {
-		$http.get("http://localhost:3000/get").success(function (data) {
-			$scope.momentsObjs = data;
-			$scope.moments = $scope.momentsObjs;
-			$scope.momId = $routeParams.momId;
-			$scope.pass = $scope.pass;
-		});
+		$scope.login = function(){
+					debugger;
+		// 	$http.post('http://localhost:3000/login',{'userName': $scope.username ,'password': $scope.password})
+		// 		.success(function(data){
+		// 				})
+		// 		.error(function(data){
+		// debugger;
 
-		$scope.checkValidation = function(){
-			var isAuthinticated = flase;
-			angular.forEach($scope.moments, function(item1) {
-				angular.forEach(item1.myMoments, function(item2) {
-					if(item2.momId == $scope.momId){
-						singleMomentStack.push(item2);
-					}
-				});
-			});
-			return isAuthinticated;
+		// 	});
+
+$http({
+    method: 'POST',
+    url: 'http://localhost:3000/login',
+    data: "userName" + $scope.username,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+}).then(function(response,headers) {
+            // success
+            console.log("yesss");
+    }, 
+    function(response,headers) { // optional
+       
+       console.log("NOOOOOO");     // failed
+    });
+
 
 		};
 	}]);

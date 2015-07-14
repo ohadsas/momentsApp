@@ -18,7 +18,7 @@ a{
 	height: 670px;
 }
 .view {
-	margin-top: 15%;	
+	margin-top: 14%;	
 }
 #noNav {
 	margin-top: 0 !important;
@@ -94,6 +94,7 @@ a{
 
 .bkgColor{
 	background-color: #fcf9e7;
+	min-height: 680px;
 }
 .downLine{
 	text-align: center;
@@ -402,3 +403,52 @@ ul.nav{
 
 
 /*navbar end*/
+
+
+
+/*map Start*/
+
+
+.navBot{
+	background-color: transparent;
+	position: fixed;;
+	min-height: 8%;
+	bottom: 0;
+	margin-bottom: 0;
+	border: none;
+	right: 0;
+	left: 0;
+	display: block;
+
+}
+.gmnoprint {
+	display: none;
+}
+
+#map-canvas > div > div:nth-child(2) {
+	display: none;
+}
+
+.mapRow {
+	min-height: 30px;
+}
+
+.mapCreateMom {
+	display: inline-block;
+	width:18%;
+	height: 30px;
+	background-image: url("../images/addIcon.png");
+	background-repeat: no-repeat;
+	float: right;
+}
+
+.mapCompass {
+	display: inline-block;
+	width:30%;
+	height: 30px;
+ 	background-image: url("../images/compass.png");
+ 	background-repeat: no-repeat;
+ 	margin-left: 10%;
+}
+
+/*map End*/

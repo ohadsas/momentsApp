@@ -33,8 +33,8 @@ $.getJSON('../json/map.json', function(json) {
  function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
-		center: new google.maps.LatLng(50.95559560716694, -114.09205446014403),
-          zoom: 14,
+		center: new google.maps.LatLng(32.0733636, 34.76631740000005),
+          zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: my_json
         }

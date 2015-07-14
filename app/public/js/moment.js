@@ -1,4 +1,4 @@
-var momentApp = angular.module("momentApp",['ngRoute','momentControllers']);//first of all we make the module
+var momentApp = angular.module("momentApp",['ngRoute','momentControllers','ngTouch']);//first of all we make the module
 console.log("moment.js");
 
 momentApp.config(['$routeProvider',

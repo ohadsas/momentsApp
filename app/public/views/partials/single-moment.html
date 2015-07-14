@@ -19,7 +19,7 @@
       <div class="clear"></div>
    </div>
    <ul ng-repeat="reMom in singleMomentObj[0].remoments" class="row remomList" ng-style = "momentBodyColor(singleMomentObj[0])">
-      <li>
+      <li  ng-show="!showActions" ng-swipe-left="showActions = true">
          <div class="row-fluid headMsg " >
             <p class="col-xs-4 momDate pfont">{{reMom.date}} &nbsp {{reMom.time}}</p>
             <p class= "col-xs-8"></p>
@@ -32,4 +32,10 @@
          </div>
       </li>
    </ul>
+
+<!-- <div ng-show="!showActions" ng-swipe-left="showActions = true">
+  Some list content, like an email in the inbox
+</div>
+<div ng-show="showActions" ng-swipe-right="showActions = false">
+  <button ng-click="reply()">Reply</button> -->
 </div>
