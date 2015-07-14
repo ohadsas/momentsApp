@@ -108,29 +108,21 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http',
 	function ($scope, $routeParams, $http) {
 		$scope.login = function(){
-					debugger;
-		// 	$http.post('http://localhost:3000/login',{'userName': $scope.username ,'password': $scope.password})
-		// 		.success(function(data){
-		// 				})
-		// 		.error(function(data){
-		// debugger;
-
-		// 	});
-
-$http({
-    method: 'POST',
-    url: 'http://localhost:3000/login',
-    data: "userName" + $scope.username,
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-}).then(function(response,headers) {
-            // success
-            console.log("yesss");
-    }, 
-    function(response,headers) { // optional
-       
-       console.log("NOOOOOO");     // failed
-    });
-
+			$http({
+				method: 'POST',
+				url: 'http://localhost:3000/login',
+				data: {'email': $scope.email, 'password' : $scope.password },
+				headers: {'Content-Type': 'application/json'}
+			}).then(function(response,headers) {
+	            // success
+	            console.log("yesss");
+	        }, 
+	    function(response,headers) { // optional
+	    	
+	       console.log("NOOOOOO");     // failed
+	   });
 
 		};
-	}]);
+
+	}]
+	);

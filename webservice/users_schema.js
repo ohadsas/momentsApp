@@ -4,8 +4,9 @@ var schema = mongoose.Schema;
 var usersSchema = new schema({
 
 userId: {type:Number, required:true, unique:true},
+email:{type:String, required:true, unique:true},
 sign: {type:String, required:true, unique:true},
-pass: {type:Number, required:true},
+pass: {type:String, required:true},
 myMoments: [{
 	momId: {type:Number, required:true, unique:true},
 	momMessage: {type:String, required:true},

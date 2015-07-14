@@ -5,9 +5,9 @@ var app = express();
 app.use('/', express.static('./public'));
 var usersAction = require('./usersActionsController');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
-app.use(bodyParser());
-
+app.use(cors());
 
 app.get('/get', function(req,res){
 	console.log("out Docs :" + usersAction.getData());
@@ -21,20 +21,22 @@ app.get('/get', function(req,res){
 
 
 app.post('/login', function(req,res){
-	console.log("dskjlkdsjlfkjsdlkfjsdlkjfldkjsdflkfdsjl");
-	console.log("POST :" + req);
+	
+	var Obj = (req.body);
+	console.log("User Details:"  + Obj.email + " - " + Obj.password);
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Header", "Origin, X-Requested-With,Content-Type, Accept");
 	res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
 	app.set('json spaces',4);
 	res.set("Content-Type", "application/json");
 	res.status(200);
-	res.json("POST:"  + req);
+	//console.log("Is User Exist :" + usersAction.userLogin(Obj.email,Obj.password));
+	usersAction.userLogin(Obj.email,Obj.password, function(err, docs){
+		console.log(docs);
+		return res.send(JSON.stringify(docs));
+		//console.log(docs);	
+		});
 });
-
-
-
-
 
 
 app.listen(process.env.PORT || 3000);
