@@ -1,5 +1,10 @@
-<div id="map-canvas">
+<div id="map-canvas" ng-controller="MomentsListCtrl" data-ng-init="mapData()"> 
+
 </div>
+
+    <div id="class" ng-repeat="marker in markers">
+         <a href="#" ng-click="openInfoWindow($event, marker)"></a>
+
 <div class="navBot">
 <div class= "row mapRow">
 <div class="mapCompass"></div>

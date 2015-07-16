@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "author": "ohad sasson",
-  "license": "ISC",
+  "license": "\\",
   "dependencies": {
     "bson": "^0.3.2",
     "express": "^4.12.4",
@@ -16,5 +16,9 @@
   "devDependencies": {},
   "keywords": [
     "first"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "momentApp"
+  }
 }

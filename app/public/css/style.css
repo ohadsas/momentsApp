@@ -425,10 +425,10 @@ ul.nav{
 	display: none;
 }
 
-#map-canvas > div > div:nth-child(2) {
+/*#map-canvas > div > div:nth-child(2) {
 	display: none;
 }
-
+*/
 .mapRow {
 	min-height: 30px;
 }
@@ -450,5 +450,21 @@ ul.nav{
  	background-repeat: no-repeat;
  	margin-left: 10%;
 }
+
+
+
+
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+}
+
+
+
 
 /*map End*/

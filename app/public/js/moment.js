@@ -22,7 +22,7 @@ momentApp.config(['$routeProvider',
       }).
       when('/map', {
         templateUrl: 'views/partials/map.html',
-        controller: 'SingleMomentCtrl'
+        controller: 'MapCtrl'
       }).
       otherwise({
         redirectTo: '/moments'
