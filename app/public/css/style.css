@@ -14,7 +14,7 @@ a{
 	text-decoration: none;
 }
 #map-canvas{
-	width: 400px;
+	max-width: 400px;
 	height: 670px;
 }
 .view {
@@ -451,20 +451,7 @@ ul.nav{
  	margin-left: 10%;
 }
 
-
-
-
-.infoWindowContent {
-    font-size:  14px !important;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+.bubbleBody{
+  background-color: transparent;
 }
-h2 {
-    margin-bottom:0;
-    margin-top: 0;
-}
-
-
-
-
 /*map End*/

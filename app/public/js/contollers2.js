@@ -1,4 +1,8 @@
+	]);
 var momentControllers = angular.module('momentControllers', []);
+
+/*=============================================MOMENTS-LIST CTRL============================================*/
+
 momentControllers.controller('MomentsListCtrl', ['$scope', '$http',
 	function ($scope, $http) {
 		$http.get("http://localhost:3000/get").success(function (data) {
@@ -68,6 +72,7 @@ momentControllers.controller('MomentsListCtrl', ['$scope', '$http',
 			};
 		}	
 	}]);
+/*=============================================SINGLE-MOMENT CTRL=======================================*/
 
 momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$http',
 	function ($scope, $routeParams, $http) {
@@ -103,6 +108,7 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 
 	}]);
 
+/*=============================================AUTH CTRL============================================*/
 momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http',
 	function ($scope, $routeParams, $http) {
 		$scope.login = function(){
@@ -125,41 +131,122 @@ momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http
 	}]
 	);
 
-
-
-
+/*=============================================MAP CTRL============================================*/
 momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http',
 	function ($scope, $routeParams, $http) {
-		$http.get("http://localhost:3000/get").success(function (data) {
-			$scope.momentsObjs = data;
+		$http.get("http://localhost:3000/get").success(function (dataMom) {
+			$scope.momentsObjs = dataMom;
+			mapObjectsCoor($scope.momentsObjs);
 		});
-		$http.get('../json/map.json').success (function(data){
-				$scope.mapStyle = data;
-		});		
 
-		$scope.singleMmomentObjId = function(){
-			var singleMomentStack = [];
-			angular.forEach($scope.moments, function(item1) {
+		$scope.mapData = function (){
+			$http.get('../json/map.json').then(function(data){
+				$scope.mapStyle = data;
+				initialize($scope.mapStyle.data);
+
+			});		
+		}
+
+		function mapObjectsCoor(dataMom){
+			var mapMomObjectsStack = [];
+			var mapObjectsCoorStack = [];
+			angular.forEach(dataMom, function(item1) {
 				angular.forEach(item1.myMoments, function(item2) {
-					if(item2.momId == $scope.momId){
-						singleMomentStack.push(item2);
+					if(angular.isDefined(item2.coor)){
+						var objCoor = { lat: item2.coor[0].latitude , long: item2.coor[0].longitude, color: item2.color};
+						mapObjectsCoorStack.push(objCoor);
+						mapMomObjectsStack.push(item2);
 					}
 				});
 			});
-			return $scope.singleMomentObj = singleMomentStack;
-		};
+			$scope.mapObjectsCoor = mapObjectsCoorStack;
+			$scope.mapMomObjects = mapMomObjectsStack;
 
-		 $scope.initialize = function() {
-		 	debugger;
-		        var mapCanvas = document.getElementById('map-canvas');
-		        var mapOptions = {
-				center: new google.maps.LatLng(32.0733636, 34.76631740000005),
-		          zoom: 15,
-		          mapTypeId: google.maps.MapTypeId.ROADMAP,
-		          styles: $scope.mapStyle
-		        }
-		        var map = new google.maps.Map(mapCanvas, mapOptions);
+			  for (i = 0; i < $scope.mapObjectsCoor.length; i++){
+     				   createMarker($scope.mapObjectsCoor[i]);
+    }
+        infoBubble.open();
+
+		};	
+
+    $scope.markers = [];
+
+ infoBubble = new InfoBubble({
+      // content: '<div class="panel panel-default whatsYourMom" ><div class="panel-heading pHead">{{moment.address}}</div><div class="panel-body"><h3> Moment Highlight</h3></div><div class="panel-footer pFooter"></div></div>',
+      position: new google.maps.LatLng(-32.0, 149.0),
+      shadowStyle: 0,
+      padding: 0,
+      backgroundColor: 'transparent',
+      borderRadius: 5,
+      arrowSize: 0,
+      borderWidth: 1,
+      borderColor: 'transparent',
+      disableAutoPan: true,
+      hideCloseButton: true,
+      backgroundClassName: 'bubbleBody'
+    });
+
+
+    var createMarker = function (info){
+    	var momObj = '<div class="panel panel-default whatsYourMom" ng-repeat= "moment in mapMomObjects"><div class="panel-heading pHead">{{moment.address}}</div><div class="panel-body"><h3> Moment Highlight</h3></div><div class="panel-footer pFooter"></div></div>';
+		var path = '../../images/pin';
+		var pinColor = "";
+		var icons = {
+		  	red: {
+				icon: path + 'Red.png'
+			},
+			green: {
+				icon: path + 'Green.png'
+			},
+			blue: {
+				icon: path + 'Blue.png'
+			},
+			orange: {
+				icon: path + 'Orange.png'
+			}
+		};
+	
+		if(info.color == "red") {
+			var pinColor = icons.red.icon;
+		}
+		else if(info.color == "green") {
+			var pinColor = icons.green.icon;
+		}
+		else if(info.color == "blue") {
+			var pinColor = icons.blue.icon;
+		}
+		else if(info.color == "orange") {
+			var pinColor = icons.orange.icon;
 		}
 
+        var marker = new google.maps.Marker({
+            map: $scope.map,
+            position: new google.maps.LatLng(info.lat, info.long),
+			icon: pinColor, 
+			content: momObj
+        });
+
+        google.maps.event.addListener(marker, 'click', function(){
+        	    infoBubble.open($scope.map, marker);
+        });
+
+           google.maps.event.addListener($scope.map, 'click', function(){
+        	    infoBubble.close();
+        });
+        
+        $scope.markers.push(marker);
+    }  
+
+		function initialize(_data){
+			var mapCanvas = document.getElementById('map-canvas');
+			var mapOptions = {
+				center: new google.maps.LatLng(32.074611, 34.777372),
+				zoom: 14,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: _data
+			}
+
+			$scope.map = new google.maps.Map(mapCanvas, mapOptions);
+		}
 	}
-]);
+	]);
