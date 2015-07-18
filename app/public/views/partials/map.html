@@ -1,12 +1,32 @@
-<div id="map-canvas" ng-controller="MomentsListCtrl" data-ng-init="mapData()"> 
+<div id="map-canvas" data-ng-init="mapData()"> 
 </div>
-    <div id="class" ng-repeat="marker in markers">
-         <a href="#" ng-click="openInfoWindow($event, marker)"></a>
-<div class="navBot">
-<div class= "row mapRow">
-<div class="mapCompass"></div>
+<!--     <div id="class" ng-repeat="marker in markers">
+	<a href="#" ng-click="openInfoWindow($event, marker)"></a> -->
+	<div class="navBot">
+		<div class= "row mapRow">
+			<div class="mapCompass"></div>
 
-<div class="mapCreateMom"></div>
+			<button class="mapCreateMom" ng-click= "showMomForm = true"></button>
 
-</div>
-</div>
+			<div class="createMomForm" >
+
+<!-- 				<div ng-show="" class="alert alert-danger">your details are incorrects</div>
+ -->				<form name="form" ng-show="showMomForm" ng-submit="createMoment(); showMomForm = false" role="form">
+					<div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }">
+						<textarea type="text" name="message" id="message" class="form-control" ng-focus= "" placeholder="Whats your Moment" ng-model="message" required ></textarea>
+						<span ng-show="form.message.$dirty && form.message.$error.required"></span>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }"> 
+						<div class="btn-group btnGroup">
+							<button type="button" class="btn btn-primary" ng-click ="color = 'blue' ">B</button>
+							<button type="button" class="btn btn-info" ng-click ="color = 'red' ">R</button>
+							<button type="button" class="btn btn-danger" ng-click ="color = 'green' ">G</button>
+							<button type="button" class="btn btn-success" ng-click ="color = 'orange' ">O</button>
+								<div class="form-actions">
+						<button type="submit" ng-disabled="form.$invalid" class="btn btn-primary publish">Publish</button>
+						</div>
+					</div>
+					</div>
+					</form>
+			</div>
+	</div>

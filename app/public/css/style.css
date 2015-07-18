@@ -65,9 +65,9 @@ a{
 	color: #16a79a !important;
 	font-weight: bold;
 	padding-top: 0;
-  padding-bottom: 2%;
-  margin-bottom: 0;
-  margin-top: 1.5%;
+	padding-bottom: 2%;
+	margin-bottom: 0;
+	margin-top: 1.5%;
 }
 
 .pFooter{
@@ -203,7 +203,6 @@ div.row-fluid.headMsg > p {
 
 p::first-letter {
 	text-transform: uppercase;
-
 }
 
 
@@ -358,7 +357,7 @@ ul.nav{
 .nav-left{
 	float: left;
 	width: 65%;
-		margin-top: 3.5%;
+	margin-top: 3.5%;
 
 
 }
@@ -446,12 +445,124 @@ ul.nav{
 	display: inline-block;
 	width:30%;
 	height: 30px;
- 	background-image: url("../images/compass.png");
- 	background-repeat: no-repeat;
- 	margin-left: 10%;
+	background-image: url("../images/compass.png");
+	background-repeat: no-repeat;
+	margin-left: 10%;
 }
 
-.bubbleBody{
-  background-color: transparent;
+/*.bubbleBody{
+	background-color: transparent;
+}*/
+
+.bubbleBody:parent{
+	 overflow: none; 
 }
+
+
+.panelHeadTakeMe{
+	text-align: center;
+	padding: 2px;
+	background-color: #faf6e2;	
+	background-image: none !important;
+}
+
+.panelBodyTakeMe{
+	text-align: center;
+	font-size: 15px;
+	color: #faf6e2;
+}
+
+.panelBodyTakeMe p:first-letter{
+	text-transform: uppercase;
+}
+
+.panelFooterTakeMe{
+	padding: 2px;
+	text-align: left;
+	border-top: none;
+	box-shadow: 0 0 0 0 rgb( 9,87,79) !important;
+	background-color: #faf6e2;
+}
+
+.panelBtntakeMe{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px 0px rgb( 9, 87, 79 );
+  width: 46%;
+  	padding: 2%;
+  	  margin-bottom: 5%;
+ background-color: #faf6e2;
+}
+/*
+.RedHead{
+	background-color : #Ef502F; +
+	box-shadow: 0.5px 0.9px 2px 0 rgb(193,83,74);
+};
+
+.BlueHead{
+	background-color : #16A79A; +
+	box-shadow: 0.5px 0.9px 2px 0 rgb(9,87,79);
+};
+
+.GreenHead{
+	background-color : #ABCB64; +
+	box-shadow: 0.5px 0.9px 2px 0 rgb(166,168,93);
+};
+
+.OrangeHead{
+	background-color : #EDC44a; +
+	box-shadow: 0.5px 0.9px 2px 0 rgb(208,155,97);
+};
+
+.RedBody{
+		background-color : rgba(235,102,90,0.8); +
+		border-color: rgb(193,83,74); +
+		box-shadow: 0 0 2px 0 rgb(193,83,74);
+};
+
+.BlueBody{
+		background-color : rgba(117,194,173,0.8); +
+		border-color: rgb(9,87,79); +
+		box-shadow:  0 0 2px 0 rgb( 9,87,79);
+};
+
+.GreenBody{
+	background-color : rgba(214,214,118,0.8); +
+	border-color: rgb(166,168,93); +
+	box-shadow: 0 0 2px 0 rgb(166,168,93);
+};
+
+.OrangeBody{
+		background-color : rgba(245,182,113,0.8); +
+		border-color: rgb(208,155,97); +
+		box-shadow: 0 0 2px 0 rgb( 208,155,97);
+};
+*/
 /*map End*/
+
+
+/* Create Mom*/
+
+#exit{
+	float: left;
+}
+
+.publish{
+	display: inline-block;
+	float: right;
+}
+
+.btnColor{
+	display: inline-block;
+	width: 60%;
+}
+
+.btnGroup{
+	width:100%;
+}
+
+/*End create mom*/

@@ -33,3 +33,33 @@ exports.userLogin = function(_email, _password, cb){
 		cb(err, data);
 	});
 }
+
+exports.createMoment = function(_userId, _coorLat, _coorLong, _message, _color, cb){
+	console.log(_userId + " " + _coorLat + " " + _coorLong + " " + _message + " " + _color);
+	var Users = mongoose.model('usersM');
+			console.log(" createMoment Called");
+	// Users.findOne({
+	// 	'userId' : _userId
+	// }, null, function(err, data) {
+
+	// }).save;
+	Users.findOne({
+		'userId' : _userId
+
+		//  '$set' : {'myMoments' : {	'coor':{'latitude' : _coorLat, 'longitude' : _coorLong},
+		// 	'momMessage': _message,
+		// 	'color':_color}
+		// }
+
+	}, null, function(err, data) {
+		data.myMoments.push({	'coor':{'latitude' : _coorLat, 'longitude' : _coorLong},
+		 	'momMessage': _message,
+			'color':_color});
+		data.save();
+		console.log(err + "ERR");
+		console.log(data + "OK");
+		cb(err, data);
+	});
+}
+
+

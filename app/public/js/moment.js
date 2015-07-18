@@ -1,4 +1,4 @@
-var momentApp = angular.module("momentApp",['ngRoute','momentControllers','ngTouch']);//first of all we make the module
+var momentApp = angular.module("momentApp",['ngRoute','momentControllers','ngTouch','geolocation']);//first of all we make the module
 console.log("moment.js");
 
 momentApp.config(['$routeProvider',
@@ -29,3 +29,30 @@ momentApp.config(['$routeProvider',
       });
 	}]);
 
+momentApp.factory('IdentityService', function(){
+  var IdentityService = {};
+  IdentityService.LoggedInUser = {};
+
+
+  IdentityService.savedLoginUser = function(user){
+    IdentityService.LoggedInUser = user;
+  }
+    return IdentityService;
+});
+
+
+momentApp.factory('momentService',['$http', function($http){
+  var momentService = {};
+  momentService.createMoment = function(userId, coor, message, color) {
+debugger;
+    return $http({
+          method: 'POST',
+          url: 'http://localhost:3000/createmoment',
+          data: {'userId': userId, 'coor': coor, 'message': message, 'color': color },
+          headers: {'Content-Type': 'application/json'}
+      });
+
+  };
+
+return momentService;
+}]);
