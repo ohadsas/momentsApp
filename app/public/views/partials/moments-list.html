@@ -1,23 +1,26 @@
 <nav id="navbar" class="navbar navbar-fixed-top">
             <ul class="nav nav-left">
                 <li class="span3 navLogo" id = "navLogo"><a href="#/moments"></a></li>
-                <li class="span3 mapIcon"><a href="#/map"></a></li>
+                <li class="span3 mapIcon notCurrent
+"><a href="#/map"></a></li>
             </ul>
               <ul class="nav nav-right">
                 <li class="span3 momIcon"><a href="#/moments"></a></li>
-                <li class="span3 menuIcon"><a href="#"></a></li>
+                <li class="span3 menuIcon notCurrent
+"><a href="#"></a></li>
             </ul>
 </nav>
 <div class="container-fluid contr-padding bkgColor">
    <div class="panel panel-default whatsYourMom">
     <div class="panel-heading pHead">
       Current Address
-   </div>
+   </div><a href="#/map">
    <div class="panel-body">
       <h3>What's your moment?</h3>
-   </div>
+   </div>  </a>
    <div class="panel-footer pFooter">
    </div>
+ 
 </div>
 <div ng-repeat="moment in moments">
    <ul ng-repeat="myMmt in moment.myMoments">

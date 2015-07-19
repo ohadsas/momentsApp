@@ -107,9 +107,11 @@ a{
 
 }
 
-.whatsYourMom > div.panel-body > h3{
+.whatsYourMom > a > div.panel-body > h3{
 	color: #75C2AD;
 	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 
@@ -231,7 +233,6 @@ div.row-fluid.headMsg > p {
 p::first-letter {
 	text-transform: uppercase;
 }
-
 
 /*Welcome Page Start*/
 
@@ -490,7 +491,7 @@ ul.nav{
 
 }
 .panel-default>.panel-heading {
-	font-size: 9px !important;
+	font-size: 12px !important;
   font-weight: bold !important;
 }
 .panelHeadTakeMe{
@@ -537,51 +538,26 @@ ul.nav{
 	margin-bottom: 4%;
 	background-color: #faf6e2;
 }
-/*
-.RedHead{
-	background-color : #Ef502F; +
-	box-shadow: 0.5px 0.9px 2px 0 rgb(193,83,74);
-};
+.saved-flag{
+	height: 30px;
+  background-image: url("../images/saveflag.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 12px;
+  right: 5.5%;
+  width: 18px;
+  opacity: 0.5;
+}
 
-.BlueHead{
-	background-color : #16A79A; +
-	box-shadow: 0.5px 0.9px 2px 0 rgb(9,87,79);
-};
-
-.GreenHead{
-	background-color : #ABCB64; +
-	box-shadow: 0.5px 0.9px 2px 0 rgb(166,168,93);
-};
-
-.OrangeHead{
-	background-color : #EDC44a; +
-	box-shadow: 0.5px 0.9px 2px 0 rgb(208,155,97);
-};
-
-.RedBody{
-		background-color : rgba(235,102,90,0.8); +
-		border-color: rgb(193,83,74); +
-		box-shadow: 0 0 2px 0 rgb(193,83,74);
-};
-
-.BlueBody{
-		background-color : rgba(117,194,173,0.8); +
-		border-color: rgb(9,87,79); +
-		box-shadow:  0 0 2px 0 rgb( 9,87,79);
-};
-
-.GreenBody{
-	background-color : rgba(214,214,118,0.8); +
-	border-color: rgb(166,168,93); +
-	box-shadow: 0 0 2px 0 rgb(166,168,93);
-};
-
-.OrangeBody{
-		background-color : rgba(245,182,113,0.8); +
-		border-color: rgb(208,155,97); +
-		box-shadow: 0 0 2px 0 rgb( 208,155,97);
-};
-*/
+.unsaved-flag{
+	height: 30px;
+  background-image: url("../images/unsaveflag.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 12px;
+  right: 5.5%;
+  width: 18px;
+}
 /*map End*/
 
 
@@ -590,19 +566,16 @@ ul.nav{
 
 .publish{
 	display: inline-block;
-	background-color: #faf6e2 !important;
-	color: #75C2AD;
-	font-size: 9px;
-	box-shadow: 2px 2px 3px 2px #ccc !important;
-	border-color: #ccc !important;
-	padding: 2px 7px 2px 7px;
-
+	background-image: url("../images/publish.png");
+	background-repeat: no-repeat;
+  height: 23px;
+  width: 58px;
 }
 
 .btn-form-action{
-		position: absolute;
-	right: 4.5%;
-	bottom: 5%;
+	position: absolute;
+	right: 3.5%;
+	bottom: 3%;
 	display: inline-block;
 }
 
@@ -615,8 +588,11 @@ ul.nav{
 	width:70%;
 	position: absolute;
 	bottom: 2%;
-	left: 2.8%;
+	left: 0%;
 }
+
+
+
 .formHead{
 	height: 22px;
 	background-color: #faf6e2;
@@ -625,8 +601,11 @@ ul.nav{
 
 .exit{
 	float: left;
-	margin: 1% 1% 0% 2%;
-	font-size: 10px;
+	margin: 2.5% 2.5% 0% 2.5%;
+	background-image: url("../images/exit.png");
+	background-repeat: no-repeat;
+	height: 10px;
+	width:10px;
 }
 .createMomForm {
 	color: #16a79a;
@@ -641,65 +620,90 @@ ul.nav{
 	border-radius: 4px;
 
 }
-::-webkit-input-placeholder { /* WebKit browsers */
-	color:    #909;
+
+::-webkit-input-placeholder{ /* WebKit browsers */
+	color:  #75C2AD !important;
+}
+
+.form-group{
+	margin-bottom: 0;
 }
 #message{
 	background-color: #faf6e2;
 	color: #16a79a;
 	border: none;
-	font-size: 18px;
+  font-size: 20px;
 	font-weight: bold;
+	text-align: center;
+	padding-top: 8%;
 }
 #message placeholder {
 	color: #16a79a;
 }
 .btnGroup .btnColor{
-	margin-right: 2%;
-	margin-left: 2.5%;
-	height: 18px;
-	width: 18px;
-	border: none;
-	border-radius: 4px;
 
+	height: 20px;
+	width: 20px;
+	border-radius: 2px;
 }
 
+.camera{
+	background-image: url("../images/cameraBlue.png");
+	background-repeat: no-repeat;
+  height: 23px;
+  width: 35px;
 
+}
 .redButton{
 	background-color : rgba(235,102,90,0.8);
+	border: 0.15em solid #ef502f;
+	margin-left: 5.5%;
+
 }
 
 
 .greenButton{
 	background-color: rgba(214,214,118,0.8);
+	border: 0.15em solid #abcb64;
+	margin-left: 5.5%;
+
 
 }
 .blueButton{
 	background-color : rgba(117,194,173,0.8); 
+	border: 0.15em solid #16a79a;
+		margin-left: 5.5%;
+
+
 
 }
 .orangeButton{
-	background-color : rgba(245,182,113,0.8); 
+	background-color : rgba(245,182,113,0.8);
+	border: 0.15em solid #edc44a;
+	margin-left: 4%;
+ 
 
 }
 .Brdr{
 	border-top: 0.1em #ccc solid;
-	width: 91%;
+	width: 96%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 10%;
+	margin-bottom: 11%;
 	opacity: 0.45;
 
 }
 
 
-
-
-
-.currAdd{  margin-left: auto;
-	margin-right: auto;
-	width: 35%;}
+.currAdd{  
+	margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 1%;
+}
 
 
 

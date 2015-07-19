@@ -9,9 +9,6 @@ momentControllers.controller('MomentsListCtrl', ['$scope', '$http',
 			$scope.moments = $scope.momentsObjs;
 		});
 
-		$scope.deb = function (stam){
-	debugger;
-}
 		$scope.momentBodyColor = function(itemColor){
 			if(angular.isDefined(itemColor)){
 				if(itemColor == "red"){
@@ -84,9 +81,7 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 			$scope.momId = angular.isDefined($routeParams.momId) ? $routeParams.momId : $routeParams._id;  ;
 			$scope.moments = $scope.momentsObjs;
 		});
-$scope.deb = function (){
-	debugger;
-}
+
 		$scope.singleMmomentObjId = function(){
 			var singleMomentStack = [];
 			angular.forEach($scope.moments, function(item1) {
@@ -110,6 +105,33 @@ $scope.deb = function (){
 			item.colorSign = colorSign;
 			return colorSign;	
 		};
+
+//  var remMsg = $('.remMsg').on('load', $scope.confirmDir);
+
+
+// $scope.confirmDir = function(remMsg){
+// $scope.letter = (remMsg.slice(0,1));
+// debugger;
+
+// if(angular.isDefined($scope.letter) && $scope.letter != null && $scope.letter.length > 0){
+//         var isRTL = $scope.checkRTL(String.fromCharCode($scope.letter.charCodeAt(0)));
+//         var dir = isRTL ? 'RTL' : 'LTR';
+//      	remMsg.style.direction = dir;    
+// 	}
+// }
+// 	debugger;
+
+
+// $scope.checkRTL = function(letter){
+// 	debugger;
+// 	if(angular.isDefined(letter) && letter != null && letter.length > 0){
+
+//     var ltrChars    = 'A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02B8\u0300-\u0590\u0800-\u1FFF'+'\u2C00-\uFB1C\uFDFE-\uFE6F\uFEFD-\uFFFF';
+//     var  rtlChars    = '\u0591-\u07FF\uFB1D-\uFDFD\uFE70-\uFEFC';
+//     var rtlDirCheck = new RegExp('^[^'+ltrChars+']*['+rtlChars+']');
+//     return rtlDirCheck.test(letter);
+
+// }}
 	}]);
 
 /*=============================================AUTH CTRL============================================*/
@@ -141,7 +163,7 @@ momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http
 
 /*=============================================MAP CTRL============================================*/
 momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geolocation', 'IdentityService','momentService',
-	function ($scope, $routeParams, $http, geolocation, angularReverseGeocode, IdentityService, momentService) {
+	function ($scope, $routeParams, $http, geolocation, IdentityService, momentService) {
 		$http.get("http://localhost:3000/get").success(function (dataMom) {
 			$scope.momentsObjs = dataMom;
 		});
@@ -165,16 +187,12 @@ momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geo
 
 
 
-
 		$scope.color= "blue"; //default
 	  	$scope.createMoment = function (){
 momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $scope.message, $scope.color)
 .then(function(result){
-	debugger;
 });
-
 	  }
-
 		function mapObjectsCoor(dataMom){
 			var mapMomObjectsStack = [];
 			var mapObjectsCoorStack = [];
@@ -214,7 +232,6 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 
 
 		var createMarker = function (info , obj){
-
 			$scope.momObj = obj;
 			$scope.momBodyColor = "";
 			$scope.momHeadColor = "";
@@ -293,7 +310,6 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 
 			$scope.markers.push(marker);
 
-
 			var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe panel-font" style =" ';
 			var tags11 = '">';
 			var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
@@ -303,7 +319,6 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			var tags444 = '">Take me</a></div><div class= "class="panel-footer panelFooterTakeMe panel-font " style=" ';
 			var tags44 = '<div class= "bodyPanelCnt " style =" ';
 			var tags5= '</div></div>';
-
 
 			google.maps.event.addListener(marker, 'click', function(){
 						infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
@@ -332,7 +347,6 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.font  + tags444 + marker.body + tags11 +
 				'&nbsp' + marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);        
 			});
-
 		}  
 
 		function initialize(_data, center){

@@ -39,6 +39,7 @@ momentApp.factory('IdentityService', function(){
   }
     return IdentityService;
 });
+
 momentApp.factory('momentService',['$http',function($http){
   var momentService = {};
   momentService.createMoment = function(userId, coor, message, color) {

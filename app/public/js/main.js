@@ -5,11 +5,14 @@ function removeNavBar() {
 }
 
 function currentWindow() {
-  $('.nav a').each(function() {
+  $('.navIcon').each(function() {
     if (($(this).attr('href')  !==  window.location.hash) && ($(this).parent().attr("id") != "navLogo")){
       $(this).parent().addClass('notCurrent');
     }
   });
 };  
+
+
+
 
 
