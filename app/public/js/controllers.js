@@ -162,7 +162,10 @@ momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geo
 	  // 		latitude: 32.074611, 
 	  // 		longitude: 34.777372	
 	  // 	}
-//userId, coor, message, color
+
+
+
+
 		$scope.color= "blue"; //default
 	  	$scope.createMoment = function (){
 momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $scope.message, $scope.color)
@@ -208,15 +211,6 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			hideCloseButton: true,
 			backgroundClassName: 'bubbleBody'
 		});
-
-		// var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe" style =" ';
-		// var tags11 = '">';
-		// var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
-		// var tags22 = '"><p>';
-		// var tags3 = '</p><a class=" panelBtntakeMe" href="#/moments/'
-		// var tags4 ='">Take me</a></div><div class= "bodyPanelCnt" style=" ';
-		// var tags44 = '<div class="panel-footer panelFooterTakeMe" style =" ';
-		// var tags5= '</div></div>';
 
 
 		var createMarker = function (info , obj){

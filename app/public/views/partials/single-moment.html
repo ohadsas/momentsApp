@@ -1,3 +1,13 @@
+<nav id="navbar" class="navbar navbar-fixed-top">
+            <ul class="nav nav-left">
+                <li class="span3 navLogo" id = "navLogo"><a href="#/moments"></a></li>
+                <li class="span3 mapIcon"><a href="#/map"></a></li>
+            </ul>
+              <ul class="nav nav-right">
+                <li class="span3 momIcon"><a href="#/moments"></a></li>
+                <li class="span3 menuIcon"><a href="#"></a></li>
+            </ul>
+</nav>
 <div class="container-fluid contr-padding map-bkg" ng-controller="MomentsListCtrl">
    <div ng-class="singleMmomentObjId()" class="momList" ng-style = "momentBodyColor(singleMomentObj[0])">
       <div class="row-fluid headMsg" ng-style = "momentHeadColor(singleMomentObj[0].color)"  >

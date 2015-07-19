@@ -427,7 +427,10 @@ ul.nav{
 	opacity: 0.5;
 }
 
+.non-nav{
+	margin-top: -14%;
 
+}
 /*navbar end*/
 
 
@@ -595,8 +598,9 @@ ul.nav{
 	padding: 2px 7px 2px 7px;
 
 }
-.form-actions{
-	position: absolute;
+
+.btn-form-action{
+		position: absolute;
 	right: 4.5%;
 	bottom: 5%;
 	display: inline-block;

@@ -1,4 +1,4 @@
-<div class="container-fluid contr-padding map-bkg">
+<div class="container-fluid contr-padding map-bkg non-nav">
    <div class="logoBig"></div>
 
       <div class="welcomeTxtBox">
@@ -7,7 +7,7 @@
       </div>
 
 <div class="loginDiv">
-    <div ng-show="wrongCred" class="alert alert-danger">your details are incorrects</div>
+    <div ng-show="" class="alert alert-danger">your details are incorrects</div>
     <form name="form" ng-submit="login()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
             <input type="text" name="email" id="email" class="form-control loginInput" ng-focus= "wrongCred = false" placeholder="Email" ng-model="email" required />
