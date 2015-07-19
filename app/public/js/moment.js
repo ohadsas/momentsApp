@@ -1,4 +1,4 @@
-var momentApp = angular.module("momentApp",['ngRoute','momentControllers','ngTouch','geolocation']);//first of all we make the module
+var momentApp = angular.module("momentApp",['ngRoute','momentControllers','ngTouch','geolocation','angularReverseGeocode']);//first of all we make the module
 console.log("moment.js");
 
 momentApp.config(['$routeProvider',
@@ -41,7 +41,7 @@ momentApp.factory('IdentityService', function(){
 });
 
 
-momentApp.factory('momentService',['$http', function($http){
+momentApp.factory('momentService',['$http', 'angularReverseGeocode',function($http){
   var momentService = {};
   momentService.createMoment = function(userId, coor, message, color) {
 debugger;

@@ -8,24 +8,26 @@
 
 			<button class="mapCreateMom" ng-click= "showMomForm = true"></button>
 
-			<div class="createMomForm" >
-
-<!-- 				<div ng-show="" class="alert alert-danger">your details are incorrects</div>
- -->				<form name="form" ng-show="showMomForm" ng-submit="createMoment(); showMomForm = false" role="form">
+			<div class="createMomForm" ng-show="showMomForm">
+<div class="formHead"><p class="exit">x</p> <p class="currAdd">current address</p></div>
+				<form name="form" ng-show="showMomForm" ng-submit="createMoment(); showMomForm = false" role="form">
 					<div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }">
 						<textarea type="text" name="message" id="message" class="form-control" ng-focus= "" placeholder="Whats your Moment" ng-model="message" required ></textarea>
 						<span ng-show="form.message.$dirty && form.message.$error.required"></span>
 					</div>
+					        <div class= "Brdr"></div>
+
 					<div class="form-group" ng-class="{ 'has-error': form.message.$dirty && form.message.$error.required }"> 
 						<div class="btn-group btnGroup">
-							<button type="button" class="btn btn-primary" ng-click ="color = 'blue' ">B</button>
-							<button type="button" class="btn btn-info" ng-click ="color = 'red' ">R</button>
-							<button type="button" class="btn btn-danger" ng-click ="color = 'green' ">G</button>
-							<button type="button" class="btn btn-success" ng-click ="color = 'orange' ">O</button>
-								<div class="form-actions">
+							<button type="button" class="orangeButton btnColor" ng-click ="color = 'orange'"></button>
+						<button type="button" class="greenButton btnColor" ng-click ="color = 'green' "></button>
+							<button type="button" class="blueButton btnColor" ng-click ="color = 'blue' "></button>
+								<button type="button" class="redButton btnColor" ng-click ="color = 'red' "></button>
+								
+					</div>
+					<div class="form-actions">
 						<button type="submit" ng-disabled="form.$invalid" class="btn btn-primary publish">Publish</button>
 						</div>
-					</div>
 					</div>
 					</form>
 			</div>

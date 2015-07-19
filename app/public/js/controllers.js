@@ -141,7 +141,7 @@ momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http
 
 /*=============================================MAP CTRL============================================*/
 momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geolocation', 'IdentityService','momentService',
-	function ($scope, $routeParams, $http, geolocation, IdentityService, momentService) {
+	function ($scope, $routeParams, $http, geolocation, angularReverseGeocode, IdentityService, momentService) {
 		$http.get("http://localhost:3000/get").success(function (dataMom) {
 			$scope.momentsObjs = dataMom;
 		});
@@ -209,14 +209,14 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			backgroundClassName: 'bubbleBody'
 		});
 
-		var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe" style =" ';
-		var tags11 = '">';
-		var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
-		var tags22 = '"><p>';
-		var tags3 = '</p><a class="btn panelBtntakeMe" role="button" href="#/moments/'
-		var tags4 ='">Take me</a></div><div class= "bodyPanelCnt" style=" ';
-		var tags44 = '<div class="panel-footer panelFooterTakeMe" style =" ';
-		var tags5= '</div></div>';
+		// var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe" style =" ';
+		// var tags11 = '">';
+		// var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
+		// var tags22 = '"><p>';
+		// var tags3 = '</p><a class=" panelBtntakeMe" href="#/moments/'
+		// var tags4 ='">Take me</a></div><div class= "bodyPanelCnt" style=" ';
+		// var tags44 = '<div class="panel-footer panelFooterTakeMe" style =" ';
+		// var tags5= '</div></div>';
 
 
 		var createMarker = function (info , obj){
@@ -246,7 +246,8 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				var pinColor = icons.red.icon;
 				$scope.momBodyColor = 'background-color : rgba(235,102,90,0.8); ' +
 				'border-color: rgb(193,83,74); '+
-				'box-shadow: 0 0 2px 0 rgb(193,83,74);';
+				'box-shadow: 0 0 1px 0 #faf6e2;'+
+				'border-radius-top-left:4px;'+ 'border-radius-bottom-right: 4px;';
 				$scope.momHeadColor = 'background-color : #Ef502F;' +
 				'box-shadow: 0.5px 0.9px 2px 0.5px rgb(193,83,74);';
 				$scope.fontColor = 'color: rgba(235,102,90,0.8);';
@@ -255,7 +256,8 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				var pinColor = icons.green.icon;
 				$scope.momBodyColor = '	background-color : rgba(214,214,118,0.8);' +
 				'border-color: rgb(166,168,93);' +
-				'box-shadow: 0 0 2px 0 rgb(166,168,93);';
+				'box-shadow: 0 0 1px 0 #faf6e2;'+
+				'border-radius-top-left:4px;'+ 'border-radius-bottom-right: 4px;';
 				$scope.momHeadColor = 'background-color : #ABCB64;' +
 				'box-shadow: 0.5px 0.9px 2px 0.5px rgb(166,168,93);';
 				$scope.fontColor = 'color: rgba(214,214,118,0.8);';
@@ -265,7 +267,8 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				var pinColor = icons.blue.icon;
 				$scope.momBodyColor = 'background-color : rgba(117,194,173,0.8); '+
 				'border-color: rgb(9,87,79); '+
-				'box-shadow:  0 0 2px 0 rgb( 9,87,79);';
+				'box-shadow: 0 0 1px 0 #faf6e2;'+
+				'border-radius-top-left:4px;'+ 'border-radius-bottom-right: 4px;';
 				$scope.momHeadColor = 'background-color : #16A79A; '+
 				'box-shadow: 0.5px 0.9px 2px 0.5px rgb(9,87,79);';
 				$scope.fontColor = 'color: rgba(117,194,173,0.8);';
@@ -274,8 +277,9 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			else if(info.color == "orange") {
 				var pinColor = icons.orange.icon;
 				$scope.momBodyColor = 	'background-color : rgba(245,182,113,0.8);' +
-				'border-color: rgb(208,155,97);' +
-				'box-shadow: 0 0 2px 0 rgb( 208,155,97);';
+				'border-color:  0 0 1px 0 #faf6e2;' +
+				'box-shadow: 0 0 2px 0 rgb( 208,155,97);' +
+				'border-radius-top-left:4px;'+ 'border-radius-bottom-right: 4px;';
 				$scope.momHeadColor = 'background-color : #EDC44a; '+
 				'box-shadow: 0.5px 0.9px 2px 0.5px rgb(208,155,97);';
 				$scope.fontColor = 'color: rgba(245,182,113,0.8);';
@@ -296,21 +300,21 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			$scope.markers.push(marker);
 
 
-			var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe" style =" ';
+			var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe panel-font" style =" ';
 			var tags11 = '">';
 			var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
 			var tags22 = '"><p>';
-			var tags3 = '</p><a class="btn panelBtntakeMe" role="button" href="#/moments/'
+			var tags3 = '</p><a class=" panelBtntakeMe" role="button" href="#/moments/'
 			var tags4 ='"style=" '
-			var tags444 = '">Take me</a></div><div class= "class="panel-footer panelFooterTakeMe" style=" ';
-			var tags44 = '<div class= "bodyPanelCnt" style =" ';
+			var tags444 = '">Take me</a></div><div class= "class="panel-footer panelFooterTakeMe panel-font " style=" ';
+			var tags44 = '<div class= "bodyPanelCnt " style =" ';
 			var tags5= '</div></div>';
 
 
 			google.maps.event.addListener(marker, 'click', function(){
-				infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
-					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + +marker.body + tags11 + tags44 + tags11 +
-					marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);
+						infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
+					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.font + tags444 + marker.body + tags11 +
+				'&nbsp' +	marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5); 
 				infoBubble.open($scope.map, marker);
 			});
 
@@ -331,8 +335,9 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				  backgroundClassName: 'bubbleBody'
 				});
 				infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
-					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.body + tags11 + tags44 + marker.body + tags11 +
-					marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);        });
+					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.font  + tags444 + marker.body + tags11 +
+				'&nbsp' + marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);        
+			});
 
 		}  
 

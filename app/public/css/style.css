@@ -1,12 +1,38 @@
 
+@font-face{
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSansHebrew-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 ul, li{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
-body{
-	/*overflow-y: hidden;*/
-	/*height: 100%;*/
+body, html, .gm-style{
+	font-family: 'OpenSansHebrew' !important;
+}
+.gm-style div {
+	border: none !important;
+	color: #faf6e2 !important;
+	font-family: 'OpenSansHebrew' !important;
+}
+
+.gm-style p{
+  padding-top: 14px;
+  padding-bottom: 1px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 180px;
+  margin-left: 23%;
+  margin-right: 25%;
+  font-size: 19px;
+  font-family: 'OpenSansHebrew' !important;
 }
 
 a{
@@ -164,13 +190,14 @@ div.row-fluid.headMsg > p {
 }
 
 .remSign{
-	font-size: 24px;
+	font-size: 14px;
 	background-color: #faf6e2;
 	text-align: center;
 	padding: 0;
+	font-weight: bold;
 	margin-left: 3%;
 	margin-top: 1%;
-	border-radius: 3px;
+	border-radius: 2px;
 }
 
 .remMsg{
@@ -384,7 +411,7 @@ ul.nav{
 .momIcon{
 	background-image: url("../images/momentIcon.png");
 	float: left;
-	margin-left: 23.9%;
+	margin-left: 21.7%;
 	margin-top: 0.65% !important;
 	width: 20%;
 }
@@ -438,7 +465,9 @@ ul.nav{
 	height: 30px;
 	background-image: url("../images/addIcon.png");
 	background-repeat: no-repeat;
+	background-color: transparent;
 	float: right;
+	border: none;
 }
 
 .mapCompass {
@@ -450,19 +479,21 @@ ul.nav{
 	margin-left: 10%;
 }
 
-/*.bubbleBody{
-	background-color: transparent;
-}*/
+.bubbleBody{
+	position: fixed;
+	top: 100px;
+	width: 300px;
+	left: 4%;
 
-.bubbleBody:parent{
-	 overflow: none; 
 }
-
-
+.panel-default>.panel-heading {
+	font-size: 9px !important;
+  font-weight: bold !important;
+}
 .panelHeadTakeMe{
 	text-align: center;
 	padding: 2px;
-	background-color: #faf6e2;	
+	color: #faf6e2;	
 	background-image: none !important;
 }
 
@@ -481,21 +512,27 @@ ul.nav{
 	text-align: left;
 	border-top: none;
 	box-shadow: 0 0 0 0 rgb( 9,87,79) !important;
-	background-color: #faf6e2;
+	color: #faf6e2;
 }
+.panel-font{
+	color: #faf6e2 !important;
 
+}
+.panel-footer{
+	color: #faf6e2 !important;
+
+}
 .panelBtntakeMe{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 2px;
-  box-shadow: 0px 1px 3px 0px rgb( 9, 87, 79 );
-  width: 46%;
-  	padding: 2%;
-  	  margin-bottom: 5%;
- background-color: #faf6e2;
+	font-size: 9px;
+	border-radius: 2px;
+	box-shadow: 0px 1px 1px 0px rgb( 9, 87, 79 );
+	width: 19%;
+	padding: 1%;
+	margin-bottom: 4%;
+	background-color: #faf6e2;
 }
 /*
 .RedHead{
@@ -547,13 +584,22 @@ ul.nav{
 
 /* Create Mom*/
 
-#exit{
-	float: left;
-}
 
 .publish{
 	display: inline-block;
-	float: right;
+	background-color: #faf6e2 !important;
+	color: #75C2AD;
+	font-size: 9px;
+	box-shadow: 2px 2px 3px 2px #ccc !important;
+	border-color: #ccc !important;
+	padding: 2px 7px 2px 7px;
+
+}
+.form-actions{
+	position: absolute;
+	right: 4.5%;
+	bottom: 5%;
+	display: inline-block;
 }
 
 .btnColor{
@@ -562,7 +608,98 @@ ul.nav{
 }
 
 .btnGroup{
-	width:100%;
+	width:70%;
+	position: absolute;
+	bottom: 2%;
+	left: 2.8%;
+}
+.formHead{
+	height: 22px;
+	background-color: #faf6e2;
+	border-radius: 4px;
 }
 
-/*End create mom*/
+.exit{
+	float: left;
+	margin: 1% 1% 0% 2%;
+	font-size: 10px;
+}
+.createMomForm {
+	color: #16a79a;
+	background-color: #faf6e2;
+	position: fixed;
+	top: 9%;
+	left: 2%;
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+	border-color: #ccc;
+	border-radius: 4px;
+
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:    #909;
+}
+#message{
+	background-color: #faf6e2;
+	color: #16a79a;
+	border: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+#message placeholder {
+	color: #16a79a;
+}
+.btnGroup .btnColor{
+	margin-right: 2%;
+	margin-left: 2.5%;
+	height: 18px;
+	width: 18px;
+	border: none;
+	border-radius: 4px;
+
+}
+
+
+.redButton{
+	background-color : rgba(235,102,90,0.8);
+}
+
+
+.greenButton{
+	background-color: rgba(214,214,118,0.8);
+
+}
+.blueButton{
+	background-color : rgba(117,194,173,0.8); 
+
+}
+.orangeButton{
+	background-color : rgba(245,182,113,0.8); 
+
+}
+.Brdr{
+	border-top: 0.1em #ccc solid;
+	width: 91%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10%;
+	opacity: 0.45;
+
+}
+
+
+
+
+
+.currAdd{  margin-left: auto;
+	margin-right: auto;
+	width: 35%;}
+
+
+
+
+	/*End create mom*/
+
+
