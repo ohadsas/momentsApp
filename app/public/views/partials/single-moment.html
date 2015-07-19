@@ -5,7 +5,7 @@
             </ul>
               <ul class="nav nav-right">
                 <li class="span3 momIcon"><a href="#/moments"></a></li>
-                <li class="span3 menuIcon notCurrent"><a href="#"></a></li>
+                <li class="span3 menuIcon notCurrent"><a href="#/moments"></a></li>
             </ul>
 </nav>
 <div class="container-fluid contr-padding map-bkg" ng-controller="MomentsListCtrl">
@@ -13,9 +13,7 @@
       <div class="row-fluid headMsg" ng-style = "momentHeadColor(singleMomentObj[0].color)"  >
          <p class="col-xs-3 momDate pfont" ng-bind="singleMomentObj[0].date"></p>
          <p class="col-xs-6 pfont" ng-bind="singleMomentObj[0].address"></p>
-
          <p  class="saved-flag"  ng-style="myStyle" ng-click="myStyle={opacity:'1'}" ></p>
-
          <div class="clear"></div>
          <p class=" col-xs-12"></p>
       </div>
@@ -44,5 +42,4 @@
          </div>
       </li>
    </ul>
-
 </div>

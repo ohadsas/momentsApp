@@ -37,16 +37,17 @@ momentApp.factory('IdentityService', function(){
   IdentityService.savedLoginUser = function(user){
     IdentityService.LoggedInUser = user;
   }
+
     return IdentityService;
 });
 
 momentApp.factory('momentService',['$http',function($http){
   var momentService = {};
-  momentService.createMoment = function(userId, coor, message, color) {
+  momentService.createMoment = function(email, coor, message, color) {
     return $http({
           method: 'POST',
           url: 'http://localhost:3000/createmoment',
-          data: {'userId': userId, 'coor': coor, 'message': message, 'color': color},
+          data: {'email': email, 'coor': coor, 'message': message, 'color': color},
           headers: {'Content-Type': 'application/json'}
       });
   };

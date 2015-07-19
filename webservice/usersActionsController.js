@@ -34,23 +34,22 @@ exports.userLogin = function(_email, _password, cb){
 	});
 }
 
-exports.createMoment = function(_userId, _coorLat, _coorLong, _message, _color, cb){
-	console.log(_userId + " " + _coorLat + " " + _coorLong + " " + _message + " " + _color);
+exports.createMoment = function(_email, _coorLat, _coorLong, _message, _color, cb){
+	console.log(_email + " " + _coorLat + " " + _coorLong + " " + _message + " " + _color);
+	console.log("This is my user Email!!!!!!!!!!! " + _email);
 	var Users = mongoose.model('usersM');
 	console.log(" createMoment Called");
 		// console.log(_address);
-
 	Users.findOne({
-		'userId' : _userId
+		'email' : _email
 	}, null, function(err, data) {
-		data.myMoments.push({	'coor':{'latitude' : _coorLat, 'longitude' : _coorLong},
+		data.myMoments.push({'coor':{'latitude' : _coorLat, 'longitude' : _coorLong},
 		 	'momMessage': _message,
-			'color':_color,
-		
+			'color':_color
 			});
 		data.save();
 		console.log(err + "ERR");
-		console.log(data + "OK");
+		console.log(data + "OK Success");
 		cb(err, data);
 	});
 }

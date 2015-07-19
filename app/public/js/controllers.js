@@ -9,6 +9,7 @@ momentControllers.controller('MomentsListCtrl', ['$scope', '$http',
 			$scope.moments = $scope.momentsObjs;
 		});
 
+
 		$scope.momentBodyColor = function(itemColor){
 			if(angular.isDefined(itemColor)){
 				if(itemColor == "red"){
@@ -132,10 +133,9 @@ momentControllers.controller('SingleMomentCtrl', ['$scope', '$routeParams', '$ht
 //     return rtlDirCheck.test(letter);
 
 // }}
-	}]);
+}]);
 
 /*=============================================AUTH CTRL============================================*/
-
 
 momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http','$window', 'IdentityService',
 	function ($scope, $routeParams, $http, $window ,IdentityService) {
@@ -146,16 +146,16 @@ momentControllers.controller('AuthMomentCtrl', ['$scope', '$routeParams', '$http
 				data: {'email': $scope.email, 'password' : $scope.password },
 				headers: {'Content-Type': 'application/json'}
 			}).then(function(response,headers) {
-	            console.log("yesss");
-	            IdentityService.savedLoginUser(response.data);
-				$window.location='/#/map';
+				console.log("yesss");
 
-	        }, 
+				IdentityService.savedLoginUser(response.data);
+
+				$window.location='/#/map';
+			}, 
 	    function(response,headers) { // optional
 	    	$scope.wrongCred = true;
 	       console.log("NOOOOOO");     // failed
 	   });
-
 		};
 	}]
 	);
@@ -171,12 +171,12 @@ momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geo
 		$scope.mapData = function (){
 			$http.get('../json/map.json').then(function(data){
 				$scope.mapStyle = data;
-				  geolocation.getLocation().then(function(result){
-          			$scope.coords = {latitude:result.coords.latitude, longitude:result.coords.longitude};
-          			initialize($scope.mapStyle.data, $scope.coords);
-          						mapObjectsCoor($scope.momentsObjs);
+				geolocation.getLocation().then(function(result){
+					$scope.coords = {latitude:result.coords.latitude, longitude:result.coords.longitude};
+					initialize($scope.mapStyle.data, $scope.coords);
+					mapObjectsCoor($scope.momentsObjs);
 
-        			});
+				});
 
 			});		
 		}
@@ -188,11 +188,23 @@ momentControllers.controller('MapCtrl', ['$scope', '$routeParams', '$http', 'geo
 
 
 		$scope.color= "blue"; //default
-	  	$scope.createMoment = function (){
-momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $scope.message, $scope.color)
-.then(function(result){
-});
-	  }
+		$scope.createMoment = function (){
+			momentService.createMoment(IdentityService.LoggedInUser.email, $scope.coords, $scope.message, $scope.color)
+			.then(function(result){
+
+			});
+		}
+
+// $scope.center = function( obj){
+// 	debugger;
+//     obj.css("position","fixed");
+//     obj.css("top", Math.max(0, (($(window).height() - $(obj).outerHeight()) / 2) + 
+//         $(window).scrollTop()) + "px");
+//     obj.css("left", Math.max(0, (($(window).width() - $(obj).outerWidth()) / 2) + 
+//         $(window).scrollLeft()) + "px");
+//     return obj;
+// };
+
 		function mapObjectsCoor(dataMom){
 			var mapMomObjectsStack = [];
 			var mapObjectsCoorStack = [];
@@ -216,8 +228,9 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 
 		$scope.markers = [];
 
+		
+
 		infoBubble = new InfoBubble({
-			position: new google.maps.LatLng(-32.0, 149.0),
 			shadowStyle: 0,
 			padding: 0,
 			backgroundColor: 'transparent',
@@ -226,12 +239,12 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			borderWidth: 1,
 			borderColor: 'transparent',
 			disableAutoPan: true,
-			hideCloseButton: true,
 			backgroundClassName: 'bubbleBody'
 		});
 
 
 		var createMarker = function (info , obj){
+
 			$scope.momObj = obj;
 			$scope.momBodyColor = "";
 			$scope.momHeadColor = "";
@@ -310,6 +323,7 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 
 			$scope.markers.push(marker);
 
+
 			var tags1 = '<div class="panel panel-default" ng-controller="MomentsListCtrl" ><div class="panel-heading panelHeadTakeMe panel-font" style =" ';
 			var tags11 = '">';
 			var tags2 = '</div><div class="panel-body panelBodyTakeMe" style =" ';
@@ -320,18 +334,22 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 			var tags44 = '<div class= "bodyPanelCnt " style =" ';
 			var tags5= '</div></div>';
 
+
 			google.maps.event.addListener(marker, 'click', function(){
-						infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
+
+				infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
 					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.font + tags444 + marker.body + tags11 +
-				'&nbsp' +	marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5); 
+					'&nbsp' +	marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5); 
 				infoBubble.open($scope.map, marker);
+				// $scope.center('.bubbleBody');
 			});
 
+
 			google.maps.event.addListener($scope.map, 'click', function(){
+				
 				infoBubble.close();
 				delete infoBubble;
 				infoBubble = new InfoBubble({
-				  // position: new google.maps.LatLng(-32.0, 149.0),
 				  shadowStyle: 0,
 				  padding: 0,
 				  backgroundColor: 'transparent',
@@ -341,12 +359,14 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				  borderColor: 'transparent',
 				  disableAutoPan: true,
 				  hideCloseButton: true,
+				  disableAutoPan: true,
 				  backgroundClassName: 'bubbleBody'
 				});
 				infoBubble.setContent( tags1  + marker.head + tags11 + marker.content.address + tags2 + marker.body +' '
 					+ tags22 + marker.content.momMessage + tags3 + (marker.content.momId || marker.content._id) + tags4 + marker.font  + tags444 + marker.body + tags11 +
-				'&nbsp' + marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);        
+					'&nbsp' + marker.content.explores + ' Explores' + ' ' + marker.content.remoments.length + ' Remoments' + tags5);        
 			});
+
 		}  
 
 		function initialize(_data, center){
@@ -358,6 +378,12 @@ momentService.createMoment(IdentityService.LoggedInUser.userId, $scope.coords, $
 				styles: _data
 			}
 			$scope.map = new google.maps.Map(mapCanvas, mapOptions);
+
+			// debugger;
+			// $( document ).ready(function() {
+			// 	
+			// });
+
 		}
 	}
 	]);

@@ -11,9 +11,11 @@ ul, li{
 	padding: 0;
 	margin: 0;
 }
+
 body, html, .gm-style{
 	font-family: 'OpenSansHebrew' !important;
 }
+
 .gm-style div {
 	border: none !important;
 	color: #faf6e2 !important;
@@ -21,34 +23,38 @@ body, html, .gm-style{
 }
 
 .gm-style p{
-  padding-top: 14px;
-  padding-bottom: 1px;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  max-width: 180px;
-  margin-left: 23%;
-  margin-right: 25%;
-  font-size: 19px;
-  font-family: 'OpenSansHebrew' !important;
+	padding-top: 14px;
+	padding-bottom: 1px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	max-width: 180px;
+	margin-left: 23%;
+	margin-right: 25%;
+	font-size: 19px;
+	font-family: 'OpenSansHebrew' !important;
 }
 
-a{
+a {
 	color: inherit;
 	text-decoration: none;
 }
-#map-canvas{
+
+#map-canvas {
 	max-width: 400px;
-	height: 670px;
+	height: 900px;
 }
+
 .view {
 	margin-top: 14%;	
 }
+
 #noNav {
 	margin-top: 0 !important;
 }
+
 .contr-padding{
 	padding-left: 0;
 	padding-right: 0;
@@ -62,10 +68,9 @@ a{
 	font-weight: bold;
 	border-radius: 3px;
 	color: #faf6e2;
-
 }
 
-.remomList{
+.remomList {
 	margin: 2%;
 	font-size: 18px;
 	color:#faf6e2;
@@ -73,7 +78,7 @@ a{
 	border: 1px solid;
 }
 
-.remBody{
+.remBody {
 	margin-top:2%;
 }
 
@@ -83,10 +88,9 @@ a{
 	box-shadow: 0px 0px 5px 0px rgb( 199,197, 185);	
 	text-align: center;
 	border: 1px solid rgb( 207, 204,188);	
-
 }
 
-.pHead{
+.pHead {
 	background-image: linear-gradient(to bottom,#faf6e2 0,#faf6e2 100%) !important;
 	color: #16a79a !important;
 	font-weight: bold;
@@ -96,35 +100,32 @@ a{
 	margin-top: 1.5%;
 }
 
-.pFooter{
+.pFooter {
 	width: 92%;
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #faf6e2;
 	border-top: 1px solid  rgb(211,208,193);
-
-
 }
 
-.whatsYourMom > a > div.panel-body > h3{
+.whatsYourMom > a > div.panel-body > h3 {
 	color: #75C2AD;
 	margin-top: 10px;
 	font-size: 20px;
 	font-weight: bold;
 }
 
-
 .panel-body{
 	padding: 4px;
 }
 
-
-.bkgColor{
+.bkgColor {
 	background-color: #fcf9e7;
 	min-height: 680px;
 }
-.downLine{
+
+.downLine {
 	text-align: center;
 	background-color: rgb( 163, 162, 152 );
 	height: 1px;
@@ -135,17 +136,17 @@ a{
 	margin-bottom: 3%;
 }
 
-.upperLine{
+.upperLine {
 	margin-top: 3%;
 	background-color: rgb( 163, 162, 152 );
 	height: 1px;
 }
 
-.clear{
+.clear {
 	clear: both;
 }
 
-.tailBrdr{
+.tailBrdr {
 	background-image: url("../images/line.png");
 	width: 94%;
 	float: none;
@@ -153,7 +154,7 @@ a{
 	margin-right: auto;
 }
 
-.momMsg{
+.momMsg {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	display: block;
@@ -175,13 +176,13 @@ div.row-fluid.headMsg > p {
 	border-radius-top-right: 3px;
 	padding-top: 1%;
 }
-.FullMomMsg{
+.FullMomMsg {
 	padding: 30px;
 	font-size: 20px;
 	font-weight: bold;
 }
 
-.momDate{
+.momDate { 
 	text-align: left;
 	padding: 0 0 0 3%;
 }
@@ -236,16 +237,15 @@ p::first-letter {
 
 /*Welcome Page Start*/
 
-.map-bkg{
+.map-bkg {
 	background-image: url("../images/mapbkg.png");
-	position: fixed;
 	background-repeat: repeat-y;
-	height: 680px;
+	height: 800px;
 	width: 100%;
 
 }
 
-.logoBig{
+.logoBig {
 	background-repeat: no-repeat;
 	background-image: url("../images/logoBig.png");
 	margin-left: auto;
@@ -255,7 +255,7 @@ p::first-letter {
 	width: 57%;
 
 }
-.welcomeTxtBox{
+.welcomeTxtBox {
 	margin-top: 13%;
 	margin-left: auto;
 	margin-right: auto;
@@ -266,7 +266,7 @@ p::first-letter {
 	color: #33aeac;
 }
 
-.btn-welcome{
+.btn-welcome {
 	display: block;
 	margin-top: 14%;
 	margin-left: auto;
@@ -275,7 +275,7 @@ p::first-letter {
 	color: #faf6e2;
 }
 
-.btn-welcome a{
+.btn-welcome a {
 	display: block;
 	font-size: 18px;
 	font-weight: bold;
@@ -284,7 +284,7 @@ p::first-letter {
 	box-shadow: 0px 1px 3px 0px rgb( 9, 87, 79 );
 }
 
-.btn-welcome a:nth-child(1){
+.btn-welcome a:nth-child(1) {
 	margin-bottom: 10%;
 }
 
@@ -488,11 +488,11 @@ ul.nav{
 	top: 100px;
 	width: 300px;
 	left: 4%;
-
 }
+
 .panel-default>.panel-heading {
 	font-size: 12px !important;
-  font-weight: bold !important;
+	font-weight: bold !important;
 }
 .panelHeadTakeMe{
 	text-align: center;
@@ -540,23 +540,23 @@ ul.nav{
 }
 .saved-flag{
 	height: 30px;
-  background-image: url("../images/saveflag.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 12px;
-  right: 5.5%;
-  width: 18px;
-  opacity: 0.5;
+	background-image: url("../images/saveflag.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 12px;
+	right: 5.5%;
+	width: 18px;
+	opacity: 0.5;
 }
 
 .unsaved-flag{
 	height: 30px;
-  background-image: url("../images/unsaveflag.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 12px;
-  right: 5.5%;
-  width: 18px;
+	background-image: url("../images/unsaveflag.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 12px;
+	right: 5.5%;
+	width: 18px;
 }
 /*map End*/
 
@@ -568,8 +568,8 @@ ul.nav{
 	display: inline-block;
 	background-image: url("../images/publish.png");
 	background-repeat: no-repeat;
-  height: 23px;
-  width: 58px;
+	height: 23px;
+	width: 58px;
 }
 
 .btn-form-action{
@@ -632,7 +632,7 @@ ul.nav{
 	background-color: #faf6e2;
 	color: #16a79a;
 	border: none;
-  font-size: 20px;
+	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
 	padding-top: 8%;
@@ -650,8 +650,8 @@ ul.nav{
 .camera{
 	background-image: url("../images/cameraBlue.png");
 	background-repeat: no-repeat;
-  height: 23px;
-  width: 35px;
+	height: 23px;
+	width: 35px;
 
 }
 .redButton{
@@ -672,7 +672,7 @@ ul.nav{
 .blueButton{
 	background-color : rgba(117,194,173,0.8); 
 	border: 0.15em solid #16a79a;
-		margin-left: 5.5%;
+	margin-left: 5.5%;
 
 
 
@@ -681,7 +681,7 @@ ul.nav{
 	background-color : rgba(245,182,113,0.8);
 	border: 0.15em solid #edc44a;
 	margin-left: 4%;
- 
+
 
 }
 .Brdr{
@@ -698,16 +698,106 @@ ul.nav{
 
 .currAdd{  
 	margin-left: auto;
-  margin-right: auto;
-  width: 32%;
-  font-size: 12px;
-  font-weight: bold;
-  padding-top: 1%;
+	margin-right: auto;
+	width: 32%;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 1%;
 }
 
 
 
 
-	/*End create mom*/
+/*End create mom*/
 
 
+/*Responsive View Start*/
+
+@media (min-width: 401px) {
+
+	#map-canvas{
+
+		max-height: 1200px; 
+		max-width: 1350px;
+	}
+	#navbar li.span3{
+		margin-bottom: 7% !important;
+
+	}
+	.momMsg {
+		font-size: 25px;
+		margin-left: 38%
+	}
+
+	.momExplores {
+		font-size: 18px;
+	}
+	.pfont {
+		font-size: 18px;	
+	}
+	.pHead{
+		font-size: 18px !important;	
+	}
+
+	.navLogo{
+		background-repeat: no-repeat;
+		background-image: url("../images/logoBig.png");	margin-left: 9.23%;
+		height: 73px;
+		width: 57%;
+
+	}
+
+	.logoBig{  background-repeat: no-repeat;
+  background-image: url("../images/logoBig.png");
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 11.5%;
+  height: 73px;
+  width: 24%;
+  display: block;
+}
+
+	.map-bkg{
+		background-image: url("../images/mapbkg.png");
+		background-repeat: repeat;
+		height: 996px;
+		width: 100%;
+	}
+	.remSign {
+		font-size: 18px;
+		height: 28px;
+		width: 30px;
+		margin-top: 0%;
+	}
+
+	.mapIcon{
+		background-image: url("../images/mapBig.png");
+		width: 18.76%;
+		margin-top: 0.65% !important;
+		height: 84px;
+	}
+
+	.momIcon{
+		background-image: url("../images/momentBig.png");
+	  float: left;
+  margin-left: 12.7%;
+  margin-top: 0.65% !important;
+  width: 28%;
+  height: 80px;
+	}
+
+	.menuIcon{
+		background-image: url("../images/menuBig.png");
+		  margin-right: 7.14%;
+  width: 30%;
+  height: 80px;
+}
+	}
+
+
+
+}
+
+
+
+/*Rsponsive View End*/

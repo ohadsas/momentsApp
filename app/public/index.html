@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="momentApp">
 <head>
-	<title>Moments</title>
+	<title>Moments App</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -16,16 +16,10 @@
 	<script src="js/lib/bower_components/jquery/dist/jquery.js"></script>
 	<script src="js/lib/angular/bower_components/angular-touch/angular-touch.js"></script>
 	<script src="js/lib/bower_components/angularjs-geolocation/src/geolocation.js"></script>
-	<script src="js/lib/bower_components/angular-reverse-geoco
-	de/angular-reverse-geocode.js"></script>
+	<script src="js/lib/bower_components/angular-reverse-geocode/angular-reverse-geocode.js"></script>
 	<script src="js/moment.js"></script>	
 	<script src="js/controllers.js"></script>	
 	<script src="js/main.js"></script>	
-	<script type="text/javascript">
-      $(document).ready(function() {
-            currentWindow();
-        });   
-	</script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js"></script>
 </head>
@@ -33,6 +27,7 @@
 
 <div ng-view class= "view">
 </div>
+
 </body>
 
 </html>

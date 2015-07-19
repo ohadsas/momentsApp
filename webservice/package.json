@@ -1,24 +1,24 @@
 {
-  "name": "webserver",
+  "name": "webservice",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "ohad sasson",
-  "license": "\\",
   "dependencies": {
+    "body-parser": "^1.13.2",
     "bson": "^0.3.2",
+    "cors": "^2.7.1",
     "express": "^4.12.4",
     "mongoose": "^4.0.4"
   },
   "devDependencies": {},
-  "keywords": [
-    "first"
-  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "momentApp"
-  }
+  },
+  "author": "Ohad & Eidan",
+  "license": "ISC"
 }

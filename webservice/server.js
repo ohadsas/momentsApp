@@ -23,25 +23,24 @@ app.get('/get', function(req,res){
 
 app.post('/createmoment', function(req,res){
 	var Obj = (req.body);
-	console.log(Obj);
+	console.log(" req.body !!!!!" + Obj);
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Header", "Origin, X-Requested-With,Content-Type, Accept");
 	res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
 	app.set('json spaces',4);
 	res.set("Content-Type", "application/json");
 
-	usersAction.createMoment(Obj.userId, Obj.coor.latitude, Obj.coor.longitude , Obj.message, Obj.color, function(err, docs){
-		console.log(docs);
+	usersAction.createMoment(Obj.email, Obj.coor.latitude, Obj.coor.longitude , Obj.message, Obj.color, function(err, docs){
+	
 		if(docs){
 		return res.send(JSON.stringify(docs));
 		//console.log(docs);				
+			console.log( " Docs !!!!!" + docs);
 		res.status(200);
 		}
 		else{
-			res.status(500).send(err);
-			
+			res.status(500).send(err);	
 		}
-
 		});
 });
 
@@ -64,7 +63,6 @@ app.post('/login', function(req,res){
 		}
 		else{
 			res.status(404).send(err);
-			
 		}
 
 		});
